@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>ReedWhat Home</title>
 </head>
 <body>
+  <div id="timer"></div>
+<div id ="stop_timer" onclick="clearInterval(timerVar)">Stop time</div>
   <!--Navigation-->
   <nav class="main-nav">
     <ul>
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="comics/comics_home.html">Comics</a></li>
       <li><a href="#">Blu-Rays</a></li>
       <li><a href="#">Action Figures</a></li>
@@ -30,18 +33,18 @@
     <!--Quick Look at New Additions to Collection-->
     <section class="new-additions">
       <header class="showcase2">
-        <h1>Newest Additions</h1>
+        <h1>What's New</h1>
         <p>blu-rays  minimates  voltron  pops</p>
         <a href="#" class="btn">Read More</a>
       </header>
       <div class="top-box top-box-a">
-        <h4>Entire Set</h4>
-        <p>Total: 0</p>
-        <p>Left: 0</p>
+        <p>Full Run Checklist</p>
+        <p>Total Run: 0</p>
+        <p>Left to Find: 0</p>
       </div>
       <div class="top-box top-box-b">
         <p>The Warriors Beast - Remco -1982</p>
-        <img class="img-wanted" src="img/Craven - The Warrior Beasts Remco.png" alt="">
+        <img class="img-wanted" src="img/af01.png" alt="">
         <img class="overlay-wanted" src="img/wanted.png" alt="">
       </div>
     </section>
@@ -50,7 +53,7 @@
       <div class="box">
         <p>ReedWhat Comics</p>
         <img src="img/avatar_Black_Racer.png" alt=""/>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, eum.</p>
+        <p>Bargin Bin -- Mini Series -- Collecting Whole Runs</p>
       </div>
       <div class="box">
         <h3>action figures</h3>
@@ -83,4 +86,16 @@
   </div>
 <!--End of Wrapper-->
 </body>
+<script type="text/javascript">
+var timerVar = setInterval(countTimer, 1000);
+var totalSeconds = 0;
+function countTimer() {
+   ++totalSeconds;
+   var hour = Math.floor(totalSeconds /3600);
+   var minute = Math.floor((totalSeconds - hour*3600)/60);
+   var seconds = totalSeconds - (hour*3600 + minute*60);
+
+   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
+}
+</script>
 </html>

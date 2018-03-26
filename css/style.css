@@ -155,6 +155,10 @@ body{
   justify-content:center;
   box-shadow:var(--shadow);
 }
+.showcase2 img{
+  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+}
 .showcase2 h1{
   font-size:4rem;
   margin-top:0;
