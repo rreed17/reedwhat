@@ -7,19 +7,86 @@
   --shadow: 0 1px 5px rgba(104,104,104, 0.8);
 }
 /*Core CSS*/
-html{
+html
+{
   box-sizing:border-box;
   font-family: Arial Black, "Helvetica Neue", Helvetica, sans-serif;
-
 }
-body{
+body
+{
   margin:0px;
-  background:linear-gradient(70deg, #637cce, #19112C);
-  font-size: 17px;
+  background:linear-gradient(30deg,#000, #19112C);
+  font-size: 1.2rem;
   font-weight: bold;
   color:#3B02D0;
   line-height: 1.4;
+  letter-spacing:0.3rem;
+}
+.wrapper
+{
+  margin:6% 10%;
+  display:grid;
+  grid-gap:20px;
+}
+/*Main Nav*/
+nav
+{
+  width:100%;
+  background:var(--primary);
+}
+ul
+{
+  width:80%;
+  margin:0 auto;
+  padding:0;
+}
+ul li
+{
+  list-style:none;
+  display:inline-block;
+  padding:20px;
+}
+ul li:hover
+{
+  background:#e91e63;
+}
+ul li a
+{
+  color:#fff;
+  text-decoration:none;
+}
+.toggle
+{
+  width:100%;
+  padding:10px 20px;
+  background:#3B02D0;
+  text-align:right;
+  box-sizing: border-box;
+  color:#fff;
+  font-size:1.3em;
+  display:none;
 
+}
+@media (max-width:768px)
+{
+  .toggle
+  {
+    display:block;
+  }
+  ul
+  {
+    width:100%;
+    display:none;
+  }
+  ul li
+  {
+    display:block;
+    text-align: center;
+  }
+  .active
+  {
+    display:block;
+  }
 }
 .btn{
   font-size: 18px;
@@ -33,37 +100,10 @@ body{
   background: #637cce;
   color: var(--light);
 }
-.wrapper{
-  margin:20px 50px;
-  display:grid;
-  grid-gap:20px;
-}
 .cb-covers img{
   max-width: 100%;
 }
-/*Main Nav*/
-.main-nav ul{
-  display:grid;
-  grid-gap:30px;
-  padding:0;
-  list-style:none;
-  grid-template-columns: repeat(5,1fr);
-}
-.main-nav a{
-  background:linear-gradient(180deg, var(--primary), #637cce);
-  display:block;
-  padding:0.8rem;
-  text-decoration:none;
-  text-transform:uppercase;
-  color:#637cce;
-  border:2px solid black;
-  font-size:1.1rem;
-  letter-spacing: 2px;
-  box-shadow: var(--shadow);
-}
-.main-nav a:hover{
-  background:linear-gradient(180deg, #637cce,var(--primary));
-}
+
 /*Full Page Showcase*/
 #showcase{
   background-image: url('../img/bgFull.png');

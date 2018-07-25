@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=1.1">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <title>ReedWhat Home</title>
 </head>
 <body>
-  <div id="timer"></div>
-<div id ="stop_timer" onclick="clearInterval(timerVar)">Stop time</div>
-  <!--Navigation-->
-  <nav class="main-nav">
+  <!--Site Navigation-->
+  <nav>
+    <div class="toggle">
+      <i class="fa fa-bars menu" aria-hidden="true"></i>
+    </div>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="comics/comics_home.html">Comics</a></li>
-      <li><a href="#">Blu-Rays</a></li>
-      <li><a href="#">Action Figures</a></li>
-      <li><a href="#">Video Games</a></li>
+        <li class="site-logo"><a href="#">ReedWhat...</a></li>
+      <li><a href="#">Collects</a></li>
+      <li><a href="#">Watches</a></li>
+      <li><a href="#">Podcast</a></li>
     </ul>
   </nav>
   <!--Full Screen Splash Page-->
@@ -29,7 +30,7 @@
       <a href="#"class="button">Read More</a>
     </header>
   </section>
-  <div class="wrapper">
+  <div id="main" class="wrapper">
     <!--Quick Look at New Additions to Collection-->
     <section class="new-additions">
       <header class="showcase2">
@@ -86,7 +87,18 @@
   </div>
 <!--End of Wrapper-->
 </body>
+<script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+  $('.menu').click(function(){
+    $('ul').toggleClass('active')
+  })
+})
+
 var timerVar = setInterval(countTimer, 1000);
 var totalSeconds = 0;
 function countTimer() {
