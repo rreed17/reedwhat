@@ -1,10 +1,11 @@
 /*CSS Variables*/
 :root{
   --primary:#291361;
-  --secondary:#637cc;
+  --secondary:#637cce;
   --dark:#333;
   --light:#fff;
   --shadow: 0 1px 5px rgba(104,104,104, 0.8);
+  --transparent: rgba(0,0,0,.8);
 }
 /*Core CSS*/
 html
@@ -28,52 +29,75 @@ body
   display:grid;
   grid-gap:20px;
 }
+header
+{
+  padding:10px 30px;
+}
+.header-img-size
+{
+  width:150px;
+  height:100px;
+  border-radius: 50%;
+}
 /*Main Nav*/
 nav
 {
   width:100%;
-  background:var(--primary);
+  background:var(--transparent);
+  border-top:1px solid rgba(255,255,255,.2);
+  border-bottom:1px solid rgba(255,255,255,.2);
+  position: sticky;
+  top:0;
 }
-ul
+nav ul
 {
-  width:80%;
+  display:flex;
   margin:0 auto;
-  padding:0;
+  padding:0 100px;
 }
-ul li
+nav ul li
 {
   list-style:none;
-  display:inline-block;
-  padding:20px;
+  display:block;
+  padding:0 20px;
 }
-ul li:hover
+nav ul li:hover
 {
-  background:#e91e63;
+  background:var(--secondary);
 }
-ul li a
+nav ul li a
 {
-  color:#fff;
+  display:block;
+  color:var(--light);
   text-decoration:none;
+  text-transform: uppercase;
+  font-weight:bold;
+  line-height:50px;
+
+
 }
 .toggle
 {
   width:100%;
   padding:10px 20px;
-  background:#3B02D0;
+  background:var(--secondary);
   text-align:right;
   box-sizing: border-box;
   color:#fff;
   font-size:1.3em;
   display:none;
-
 }
-@media (max-width:768px)
+.toggle i
+{
+  cursor:pointer;
+}
+@media (max-width:952px)
 {
   .toggle
   {
     display:block;
   }
-  ul
+  nav ul
   {
     width:100%;
     display:none;
