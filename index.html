@@ -20,9 +20,28 @@
     </div>
     <ul>
         <li class="site-logo page"><a href="#">ReedWhat...</a></li>
-      <li><a href="#">Collects</a></li>
-      <li><a href="#">Watches</a></li>
-      <li><a href="#">Podcast</a></li>
+      <li class="sub-menu"><a href="#">Collects</a>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#">Watches</a>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#">Podcast</a>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
   <!--Full Screen Splash Page-->
@@ -71,14 +90,9 @@
         <p>A different kind of evil takes a different kind of justice...</p>
       </div>
       <div class="box box-outside">
-        <label>
-
-            <div class="card">
-                <div class="front">Video Games</div>
-                <div class="back"><img src="img/skyrim_character_04.jpg" alt=""></div>
+                <h3>Video Games</h3>
+                <img src="img/skyrim_character_04.jpg" alt="">
             </div>
-        </label>
-      </div>
       </div>
     </section>
     <div class="watchesimg">
@@ -115,22 +129,4 @@
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.menu').click(function(){
-    $('ul').toggleClass('active')
-  })
-})
-
-var timerVar = setInterval(countTimer, 1000);
-var totalSeconds = 0;
-function countTimer() {
-   ++totalSeconds;
-   var hour = Math.floor(totalSeconds /3600);
-   var minute = Math.floor((totalSeconds - hour*3600)/60);
-   var seconds = totalSeconds - (hour*3600 + minute*60);
-
-   document.getElementById("timer").innerHTML = hour + ":" + minute + ":" + seconds;
-}
-</script>
 </html>

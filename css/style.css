@@ -25,12 +25,6 @@ body
   line-height: 1.4;
   letter-spacing:0.3rem;
 }
-.wrapper
-{
-  margin:6% 10%;
-  display:grid;
-  grid-gap:20px;
-}
 header
 {
   padding:10px 30px;
@@ -62,8 +56,25 @@ nav ul li
 {
   list-style:none;
   display:block;
-  padding:0 20px;
+  position:relative;
+  padding:0 10px;
   transition: all .5s ease-out;
+}
+nav ul li ul
+{
+  display:none;
+  position: absolute;
+  left:0;
+  background: #333;
+}
+nav ul li.active ul
+{
+  display: block;
+}
+nav ul li ul li
+{
+  display:block;
+  width:200px;
 }
 nav ul li:hover
 {
@@ -343,14 +354,25 @@ footer{
     width:100%;
     display:none;
   }
-  ul li
+  nav ul li
   {
     display:block;
     text-align: center;
   }
-  .active
+  .active-sub-menu
   {
     display:block;
+  }
+  nav ul li ul li{
+    display:none;
+  }
+  nav ul li.active ul
+  {
+    position:relative;
+    display:block;
+  }
+  nav ul li.active ul li{
+    display:flex;
   }
   #showcase{
     background-image: url('../img/bgFull2.png');
@@ -364,12 +386,6 @@ footer{
     text-align: center;
     padding:0px;
   }
-  #showcase h1{
-    display: none;
-    font-size: 45px;
-    margin:0px;
-    padding:0px;
-  }
   #showcase p{
     display: none;
     margin:0px;
@@ -379,14 +395,6 @@ footer{
 }
 @media(max-width:800px){
 
-  #showcase .button{
-    font-size: 18px;
-    text-decoration: none;
-    color:#637cce;
-    padding:10px 20px;
-    border: #637cce 1px solid;
-    margin-top:5px;
-  }
   .top-container{
     grid-template-areas:
     'showcase2 showcase2'
@@ -409,20 +417,7 @@ footer{
 
 }
 @media(max-width:500px){
-  .top-container{
-    grid-template-areas:
-    'showcase'
-    'top-box-a'
-    'top-box-b';
-  }
   #showcase{
     padding:0px;
-  }
-  .mid-container{
-    grid-template-areas:
-    "ms-title"
-    "ms-total-issue"
-    "ms-covers"
-    "ms-footer"
   }
 }
