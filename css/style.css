@@ -50,6 +50,7 @@ nav
   border-bottom:1px solid rgba(255,255,255,.2);
   position: sticky;
   top:0;
+  z-index: 5;
 }
 nav ul
 {
@@ -62,6 +63,7 @@ nav ul li
   list-style:none;
   display:block;
   padding:0 20px;
+  transition: all .5s ease-out;
 }
 nav ul li:hover
 {
@@ -75,8 +77,6 @@ nav ul li a
   text-transform: uppercase;
   font-weight:bold;
   line-height:50px;
-
-
 }
 .toggle
 {
@@ -93,27 +93,7 @@ nav ul li a
 {
   cursor:pointer;
 }
-@media (max-width:952px)
-{
-  .toggle
-  {
-    display:block;
-  }
-  nav ul
-  {
-    width:100%;
-    display:none;
-  }
-  ul li
-  {
-    display:block;
-    text-align: center;
-  }
-  .active
-  {
-    display:block;
-  }
-}
+
 .cb-covers img{
   max-width: 100%;
 }
@@ -124,154 +104,166 @@ nav ul li a
       rgba(0, 0, 0, 0.8),
       rgba(36, 31, 126, 0.7),
       rgba(36, 31, 126, 0.4)), url('../img/bgCity23.png');
-      animation: animate 30s linear infinite;
+      background-size:cover;
+      animation: bgscroll 20s linear infinite;
 }
-@keyframes animate {
+@keyframes bgscroll {
   0%
   {
     background-position: 0% 350px;
   }
-
+  50%
+  {
+    background-position: 50% 350px;
+  }
   100%
   {
-    background-position: 100% 300px;
+    background-position: 100% 350px;
   }
 }
 #showcase{
-  background-image: url('../img/bgFull.png');
+  background-image: url('../img/bgfull2.png'),url('../img/skyline-clev.png');
   background-size: cover;
-  background-position: center;
+  background-position:center, 100% 30em;
   box-shadow: var(--shadow);
-  height:100vh;
+  height:80vh;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items: left;
+  flex-direction:row;
+  align-items: flex-end;
   text-align: center;
   letter-spacing: 2px;
   padding:0px 20px;
 }
-#showcase h1{
-  font-size: 50px;
-  /*Gordon Hall's True Inset Text CSS*/
-  background-color: #666666;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
-}
 #showcase p{
-  font-size: 20px;
+
+  font-size: 50px;
   /*soft emboss text css*/
   text-transform: uppercase;
   color: rgba(0,0,0,0.6);
   text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
                  0px -5px 35px rgba(255,255,255,0.3);
 }
-#showcase .button{
-  font-size: 18px;
-  text-decoration: none;
-  color:#637cce;
-  padding:10px 20px;
-  border: #637cce 1px solid;
-  margin-top:20px;
-}
-#showcase .button:hover{
-  background: #637cce;
-  color:#fff;
-}
-
-.sub-nav ul{
-  display:grid;
-  grid-gap:15px;
-  padding:1rem;
-  list-style:none;
-  grid-template-columns: repeat(4,1fr);
-}
-.sub-nav a{
-  background:linear-gradient(90deg, var(--primary), #637cce);
-  display:block;
-  padding:0.8rem;
-    border:2px solid black;
-  text-decoration:none;
-  text-transform:uppercase;
-  color:#637cce;
-  font-size:0.7rem;
-  box-shadow: var(--shadow);
-}
-.sub-nav a:hover{
-  color:#fff;
-  background:linear-gradient(90deg, #637cce,var(--primary));
-}
-
-/*New Additions Section*/
-.new-additions{
-  display:grid;
-  grid-gap:20px;
-  grid-template-areas:
-  'showcase2 showcase2 top-box-a'
-  'showcase2 showcase2 top-box-b';
-}
-/*Showcase 2*/
-.showcase2{
-  grid-area:showcase2;
-  min-height:400px;
-  background:url('../img/newAdditions.jpg');
+/*Parallax Website ideas*/
+.collectsimg, .watchesimg, .podcastimg
+{
+  position:relative;
+  opacity:.70;
+  background-position: center;
   background-size:cover;
-  background-position:center;
-  padding:3rem;
-  display:flex;
-  flex-direction:column;
-  align-items:start;
-  justify-content:center;
-  box-shadow:var(--shadow);
+  background-repeat:no-repeat;
+  /*fixed = Parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
 }
-.showcase2 img{
-  -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-    filter: blur(5px);
+.collectsimg
+{
+  background-image:url('../img/newAdditions.jpg');
+  min-height:600px;
 }
-.showcase2 h1{
+.watchesimg
+{
+  background-image:url('../img/watchesimg.jpeg');
+  min-height:600px;
+}
+.podcastimg
+{
+  background-image:url('../img/podcastingimg.jpeg');
+  min-height:600px;
+}
+.section
+{
+  text-align:center;
+  padding: 50px 80px;
+}
+.section-light
+{
+  background-color:#f4f4f4;
+  color:#666;
+}
+.section-dark
+{
+  background-color:#282e34;
+  color:#ddd;
+}
+.ptext
+{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:2em;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+.ptext .border
+{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+/*Collects section Revolving Display*/
+.news
+{
+  box-shadow:inset 0 -15px 30px rgba(149,118,171,0.9), 0 5px 10px rgba(2,2,4,0.5);
+  width:40rem;
+  height:4rem;
+  margin:0.8em auto;
+  overflow:hidden;
+  border-radius: 4px;
+  border:7px solid #262626;
+  background:#fff;
+  -webkit-user-select:none;
+}
+.news ul
+{
+  float:left;
+  padding-left:20px;
+  animation:ticker 15s cubic-bezier(1,0,.5,0) infinite;
+  -webkit-user-select:none;
+}
+.news ul li
+{
+  line-height:42px;
+  list-style:none;
+}
+.news ul li a
+{
+  color:var(--dark);
+  text-decoration:none;
+  text-transform: uppercase;
   font-size:4rem;
-  margin-top:0;
-  color:#637cce;
-  background:var(--primary);
-  border: 2px solid black;
-  text-shadow: 4px 3px 0px #fff, 9px 8px 0px var(--shadow);
-  border-radius: 18px;
-  padding:17px 17px;
+  padding:10px;
+  -webkit-font-smoothing:antialiased;
+  -webkit-user-select:none;
 }
-.showcase2 p{
-  font-size: 1.3rem;
-  margin-top:0;
-  color:#637cce;
-  background:var(--primary);
-  border: 2px solid black;
-  border-radius: 18px;
-  padding:17px 17px;
+.news ul:hover
+{
+  animation-play-state:paused;
 }
-.top-box{
-  background:var(--primary);
-  display:grid;
-  align-items: center;
-  justify-items:center;
-  box-shadow: var(--shadow);
-  padding:1rem;
+@keyframes ticker {
+  0%   {margin-top: 1em}
+  20%  {margin-top: -2.1em}
+  40%  {margin-top: -5.1em}
+  60%  {margin-top: -7.9em}
+  80% {margin-top: -11.3em}
+  100% {margin-top: 0}
 }
-.top-box-a{
-  grid-area:top-box-a;
-  background:linear-gradient(90deg, var(--primary), #637cce);
-}
-.top-box-b{
-  grid-area:top-box-b;
-  position: relative;
-  background:linear-gradient(90deg, var(--primary), #637cce);
+/*Use this for overlapping images*/
+.box-wanted
+{
+  position:relative;
 }
 .img-wanted{
   position: relative;
 }
 .overlay-wanted{
   position:absolute;
+  top:0;
+  left:0;
+  padding:4rem;
+  display: block;
 }
 .boxes{
   display:grid;
@@ -281,8 +273,15 @@ nav ul li a
 .box{
   background: var(--primary);
   text-align:center;
-  padding:1.5rem 1rem;
-  box-shadow: var(--shadow);
+  padding:1.5rem 1.5rem;
+}
+.box-inside{
+  background:linear-gradient(180deg, var(--primary), #637cce);
+  color:#fff;
+}
+.box-outside{
+  background:linear-gradient(90deg, var(--primary), #637cce);
+  color:#fff;
 }
 .boxes img{
   max-width:100%;
@@ -290,49 +289,11 @@ nav ul li a
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.boxes img:hover{
+.boxes img:hover
+{
   -moz-transform: scale(1.1);
    -webkit-transform: scale(1.1);
    transform: scale(1.1);
-}
-/*Info*/
-.info{
-  background:var(--primary);
-  box-shadow: var(--shadow);
-  display:grid;
-  grid-gap:30px;
-  grid-template-columns:repeat(2, 1fr);
-  padding:2rem;
-}
-.info img{
-  width:90%;
-}
-.cb-covers{
-  display:grid;
-  grid-gap:20px;
-  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-}
-.cb-covers h1{
-  font-size: 36px;
-  padding:7px;
-  writing-mode:vertical-lr;
-  text-orientation:upright;
-}
-.cb-covers img{
-  width:100%;
-  box-shadow: var(--shadow);
-}
-#section-a{
-  padding:20px;
-  background: #637cce;
-  color:#fff;
-  text-align: center;
-}
-#section-b{
-  padding:20px;
-  background: #fff;
-  color:#637cce;
-  text-align: center;
 }
 footer{
   margin-top:2rem;
@@ -371,18 +332,28 @@ footer{
   "ms-total-issue ms-covers ms-covers"
   "ms-footer ms-footer ms-footer"
 }
-
-
-.cb-covers h1{
-  margin:0px;
-}
-.clip-text-one{
-  background-image: url(../img/cb-covers-02.jpg)
-}
-
-@media(max-width:800px){
+@media (max-width:952px)
+{
+  .toggle
+  {
+    display:block;
+  }
+  nav ul
+  {
+    width:100%;
+    display:none;
+  }
+  ul li
+  {
+    display:block;
+    text-align: center;
+  }
+  .active
+  {
+    display:block;
+  }
   #showcase{
-    background-image: url('../img/bgFull.png');
+    background-image: url('../img/bgFull2.png');
     background-size: cover;
     background-position: center;
     height:70vh;
@@ -405,6 +376,9 @@ footer{
     font-size: 20px;
     padding:0px;
   }
+}
+@media(max-width:800px){
+
   #showcase .button{
     font-size: 18px;
     text-decoration: none;
