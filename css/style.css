@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
 
 /*CSS Variables*/
 :root{
@@ -282,19 +283,20 @@ nav ul li a
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
 }
 .box{
-  background: var(--primary);
+  background: rgba(255,255,255,0.8);
   text-align:center;
   padding:1.5rem 1.5rem;
 }
 .box-inside{
-  background:linear-gradient(180deg, var(--primary), #637cce);
+  background:linear-gradient(180deg, #666, #A0A9B2);
   color:#fff;
 }
 .box-outside{
-  background:linear-gradient(90deg, var(--primary), #637cce);
+  background:linear-gradient(90deg, #f4f4f4, #A0A9B2);
   color:#fff;
 }
 .boxes img{
+  border-radius: 60%;
   max-width:100%;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
@@ -358,6 +360,11 @@ footer{
   {
     display:block;
     text-align: center;
+    width:50%;
+  }
+  nav ul li:hover
+  {
+    background:none;
   }
   .active-sub-menu
   {
@@ -393,6 +400,115 @@ footer{
     padding:0px;
   }
 }
+/*Top 10 Genre Page*/
+#TopGenre.container{
+  width: 100vw;
+  height:100vh;
+  display:flex;
+  box-sizing: border-box;
+}
+#TopGenre.container .box{
+  width:20vw;
+  text-align: center;
+  line-height:100vh;
+  flex-grow:1;
+  background-size:cover;
+  background-position: center;
+  transition: 1s;
+}
+#TopGenre h1{
+  margin:0;
+  padding: 0;
+  line-height: 100vh;
+  font-size: 2em;
+  background:rgba(0,0,0,.8);
+  transition: .5s;
+}
+#TopGenre h1 span{
+  background: rgba(255,255,255,0);
+  width:100%;
+  transition:1s;
+  color:#fff;
+  padding:25px 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#TopGenre .box:hover h1 span{
+  color:#262626;
+  background: rgba(255,255,255,0.8);
+  letter-spacing: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+#TopGenre .box:hover h1{
+  background:rgba(0,0,0,0);
+}
+#TopGenre .box:hover{
+  width:80vw
+}
+#TopGenre.container .box:nth-child(1){
+  background: url(1.jpg);
+}
+#TopGenre.container .box:nth-child(2){
+  background: url(2.jpg);
+}
+#TopGenre.container .box:nth-child(3){
+  background: url(3.jpg);
+}
+#TopGenre.container .box:nth-child(4){
+  background: url(4.jpg);
+}
+#TopGenre.container .box:nth-child(5){
+  background: url(5.jpg);
+}
+p.neon a
+{
+  font-size: 2em;
+  font-family: 'Monoton', cursive;
+  color: #fff;
+  margin: 20px 0 20px 0;
+  -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 1.5s ease-in-out infinite alternate;
+}
+#ReedLeisureSec p a
+{
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+
+}
+p.neon a:hover{
+  color:#228DFF;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@-moz-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
 @media(max-width:800px){
 
   .top-container{
