@@ -215,6 +215,33 @@ nav ul li a
   color:#fff;
   padding:20px;
 }
+.collectsxboximg, .collectsxbox360img, .collectsxboxoneimg
+{
+  position:relative;
+  opacity:.70;
+  background-position: center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  /*fixed = Parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+.collectsxboximg
+{
+  background-image:url('../img/collectsxboximg.jpg');
+  min-height:600px;
+}
+.collectsxbox360img
+{
+  background-image:url('../img/collectsxbox360.png');
+  min-height:600px;
+}
+.collectsxboxoneimg
+{
+  background-image:url('../img/podcastingimg.jpeg');
+  min-height:600px;
+}
 /*Collects section Revolving Display*/
 .news
 {
