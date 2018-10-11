@@ -1,0 +1,140 @@
+body
+{
+  margin:0;
+  padding:0;
+  font-family:sans-serif;
+  background:#262626;
+}
+#HeaderDCAnim .main
+{
+  position: relative;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:800px;
+  height:200px;
+  margin-top:10%;
+  color:red;
+}
+#HeaderDCAnim .main .layer1
+{
+  width:100%;
+  height:100%;
+  background:blue;
+  transform:skewX(-30deg);
+  box-shadow: 0 0 0 15px #262626;
+  z-index:1;
+  transition: .5s;
+}
+#HeaderDCAnim .main .layer2
+{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#fff;
+  z-index: -1;
+  transition:1s;
+}
+#HeaderDCAnim .main:hover .layer2
+{
+  transform:scaleX(1.5) scaleY(.8);
+}
+#HeaderDCAnim .main .content
+{
+  position:absolute;
+  top:10%;
+  left:10%;
+  right:10%;
+  bottom:10%;
+  z-index: 2;
+  padding:50px;
+  box-sizing:border-box;
+  text-align:center;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+}
+#HeaderDCAnim .main .content
+{
+
+}
+#HeaderDCAnim .content h1
+{
+  display:absolute;
+  letter-spacing:2px;
+  text-transform: uppercase;
+  font-size: 2em;
+  color:#000;
+  -webkit-text-fill-color:transparent;
+  -webkit-text-stroke-width:2px;
+}
+.no-have{
+    display:none;
+    width:100px;
+    height:100px;
+    background-color: gray;
+    top: 50px;
+    left: 50px;
+    padding: 10px;
+    opacity: .8;
+}
+
+.container{
+  margin:70px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap:35px;
+}
+.container .box
+{
+  position: relative;
+  width:100%;
+  height:165px;
+  background:#ff0;
+  margin:10px;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+}
+.container .box .imgBox{
+  position:relative;
+  overflow:hidden;
+}
+.container .box .imgBox img{
+  max-width:100%;
+  transition:transform 2s;
+}
+.container .box:hover .imgBox img{
+  transform:scale(1.2);
+}
+.container .box .details{
+  position: absolute;
+  top:10px;
+  left:10px;
+  bottom:10px;
+  right:10px;
+  background:rgba(0,0,0,0.8);
+  transform:scaleY(0);
+  transition:transform .5s;
+}
+.container .box:hover .details{
+  transform:scaleY(1);
+}
+.container .box .details .content{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  text-align: center;
+  padding:15px;
+  color:#fff;
+}
+.container .box .details .content h2{
+  margin:0;
+  padding:0;
+  font-size:.8em;
+  color:#ff0;
+}
+.container .box .details .content p{
+  margin: 10px 0 0;
+  padding:0;
+}

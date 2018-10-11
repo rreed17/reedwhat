@@ -4,7 +4,8 @@
   display: grid;
   grid-template-areas:
   'tcHeader tcHeader tcHeader'
-  'tcContainerL tcContainerM tcContainerR';
+  'tcContainerL tcContainerM tcContainerR'
+  'tcContainer2L tcContainer2R tcContainer2R';
   grid-gap:20px;
 
 }
@@ -76,6 +77,26 @@
   width:100%;
 }
 .top-covers-imgs-r
+{
+  display:grid;
+  grid-gap:5px;
+  grid-template-columns:repeat(5, 1fr);
+}
+/*2 Row Right Top 50 Covers Image Gallery*/
+.top-covers-container-2r
+{
+  grid-area: tcContainer2R;
+  max-width: 400px;
+  margin:auto;
+  border:#fff solid 3px;
+  background:#fff;
+}
+.top-covers-main-img-2r img,
+.top-covers-imgs-2r img
+{
+  width:100%;
+}
+.top-covers-imgs-2r
 {
   display:grid;
   grid-gap:5px;
