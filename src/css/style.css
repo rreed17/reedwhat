@@ -15,6 +15,8 @@ html {
 
 body {
   background: linear-gradient(30deg, #252C38, #19112C);
+  background-attachment: fixed;
+  background-position: center;
   font-size: 1.2rem;
   font-weight: bold;
   color: #3B02D0;
@@ -68,7 +70,7 @@ header nav {
   header nav ul li a:hover,
   header nav ul li a.active {
     color: #F4F6F7;
-    background: #637cce; }
+    background: #252C38; }
 
 .nav-menu-toggle {
   color: #F4F6F7;
