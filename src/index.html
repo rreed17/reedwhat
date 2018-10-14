@@ -5,45 +5,42 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+  <div class="top-banner">
+      <img class="banner-img-size" src="/img/avatar_Black_Racer.png" alt="Avatar Black Racer">
+  </div>
     <header>
-      <img class="header-img-size" src="/img/avatar_Black_Racer.png" alt="Avatar Black Racer">
+       <div class="nav-logo">ReedWhat</div>
+       <nav>
+         <ul>
+           <li><a href="" class="active">Home</a></li>
+           <li><a href="">Collects</a></li>
+           <li><a href="">Leisure</a></li>
+           <li><a href="">Podcast</a></li>
+         </ul>
+       </nav>
+    <div class="nav-menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
     </header>
     <!--Site Navigation-->
-  <nav>
-      <div class="toggle">
-        <i class="fa fa-bars menu" aria-hidden="true"></i>
-      </div>
-      <ul>
-          <li class="site-logo page"><a href="#">ReedWhat...</a></li>
-        <li class="sub-menu"><a href="#">Collects</a>
-          <ul>
-            <li><a href="collect_video_games.html">Video Games</a></li>
-            <li><a href="collect_action_figures.html">Action Figures</a></li>
-            <li><a href="collect_dcanimation.html">DC Animation</a></li>
-            <li><a href="collect_mcu.html">MCU</a></li>
-          </ul>
-        </li>
-        <li class="sub-menu"><a href="#">Leisure</a>
-          <ul>
-            <li><a href="leisure_top_10_genre.html">Top 10</a></li>
-            <li><a href="leisure_top_covers.html">Top 50 Covers</a></li>
-            <li><a href="#">Link 3</a></li>
-            <li><a href="#">Link 4</a></li>
-          </ul>
-        </li>
-        <li class="sub-menu"><a href="#">Podcast</a>
-          <ul>
-            <li><a href="#">Toon Spiral</a></li>
-            <li><a href="#">Anthology Asylum</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  <h1>Sass Starter Pack</h1>
-  <p>Edit the scss/style.scss file and it will automatically compile into css/style.css</p>
+    <main>
+
+    </main>
+
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav-menu-toggle').click(function(){
+        $('nav').toggleClass('active')
+      })
+    })
+    </script>
 </body>
 
 </html>

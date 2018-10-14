@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Do+Hyeon");
+@import url("https://fonts.googleapis.com/css?family=BioRhyme");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
 /*
-$container:
 $section-padding:*/
 * {
   padding: 0;
@@ -11,20 +11,97 @@ $section-padding:*/
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-family: "Do Hyeon", sans-serif; }
+  font-family: "Cabin", sans-serif; }
 
 body {
-  background: linear-gradient(30deg, #000, #19112C);
+  background: linear-gradient(30deg, #252C38, #19112C);
   font-size: 1.2rem;
   font-weight: bold;
   color: #3B02D0;
   line-height: 1.4;
   letter-spacing: 0.3rem; }
 
-header {
+.top-banner {
   padding: 10px 30px; }
 
-.header-img-size {
+.banner-img-size {
   width: 150px;
   height: 100px;
   border-radius: 50%; }
+
+/*HEADER NAVIGATION*/
+header {
+  padding: 10px 30px;
+  position: absolute;
+  background: #291361;
+  top: 133px;
+  left: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+header .nav-logo {
+  color: #637cce;
+  height: 50px;
+  line-height: 50px;
+  font-size: 2rem;
+  float: left;
+  font-weight: bold; }
+
+header nav {
+  float: right; }
+  header nav ul {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+  header nav ul li {
+    list-style: none; }
+  header nav ul li a {
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #F4F6F7;
+    text-decoration: none;
+    display: block; }
+  header nav ul li a:hover,
+  header nav ul li a.active {
+    color: #F4F6F7;
+    background: #637cce; }
+
+.nav-menu-toggle {
+  color: #F4F6F7;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; }
+
+/*HEADER NAVIGATION*/
+main {
+  margin: 5px 25rem;
+  background-color: linear-gradient(30deg, #252C38, #19112C); }
+
+/*MEDIA Query*/
+@media (max-width: 991px) {
+  header {
+    padding: 0 20px; }
+  .nav-menu-toggle {
+    display: block; }
+  header nav {
+    position: absolute;
+    width: 100%;
+    height: calc(50vh - 50px);
+    background: #291361;
+    top: 50px;
+    left: -100%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s; }
+    header nav ul {
+      display: block;
+      text-align: center; }
+    header nav ul li a {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  header nav.active {
+    left: 0; } }

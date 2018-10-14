@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+@import url('https://fonts.googleapis.com/css?family=BioRhyme');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 @import 'variables';
 
 //Resets
@@ -20,13 +21,102 @@ body {
     line-height: 1.4;
     letter-spacing:0.3rem;
 }
-header
+.top-banner
 {
   padding: 10px 30px;
 }
-.header-img-size
+.banner-img-size
 {
   width:150px;
   height:100px;
   border-radius: 50%;
+}
+/*HEADER NAVIGATION*/
+header{
+  padding: 10px 30px;
+  position: absolute;
+  background:$primary-color;
+  top:133px;
+  left:0;
+  width:100%;
+  box-sizing: border-box;
+}
+header .nav-logo{
+  color:$secondary-color;
+  height:50px;
+  line-height: 50px;
+  font-size: 2rem;
+  float: left;
+  font-weight: bold;
+}
+header nav{
+  float: right;
+
+  ul{
+    margin:0;
+    padding: 0;
+    display: flex;
+  }
+  ul li{
+    list-style: none;
+  }
+  ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: $light-color;
+    text-decoration: none;
+    display: block;
+  }
+  ul li a:hover,
+  ul li a.active{
+    color: $light-color;
+    background: $secondary-color;
+  }
+}
+
+.nav-menu-toggle{
+  color:$light-color;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+/*HEADER NAVIGATION*/
+main{
+  margin:$main-container;
+  background-color:$body-bg;
+}
+
+/*MEDIA Query*/
+@media (max-width: 991px){
+  header{
+    padding: 0 20px;
+  }
+  .nav-menu-toggle{
+    display:block;
+  }
+  header nav{    
+    position: absolute;
+    width: 100%;
+    height: calc(50vh - 50px);
+    background:$primary-color;
+    top: 50px;
+    left: -100%;
+    transition: 0.5s;
+
+    ul{
+      display:block;
+      text-align: center;
+    }
+
+    ul li a{
+      border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+  }
+
+  header nav.active{
+    left:0;
+  }
 }
