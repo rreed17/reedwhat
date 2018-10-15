@@ -80,10 +80,50 @@ header nav {
   cursor: pointer;
   display: none; }
 
-/*HEADER NAVIGATION*/
+/*END HEADER NAVIGATION*/
 main {
   margin: 5px 25rem;
   background-color: linear-gradient(30deg, #252C38, #19112C); }
+
+.bg-full {
+  background-image: url("../img/bgfull2.png");
+  background-size: cover;
+  background-position: center, 100% 30em;
+  -webkit-box-shadow: var(--shadow);
+  box-shadow: var(--shadow);
+  height: 100vh; }
+
+/**/
+.wrapper-grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  background: #fff;
+  width: 6fr;
+  height: 40vh;
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 5px; }
+
+.recent-box {
+  background-color: #637cce;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3); }
+
+.recent-box.collect-banner,
+.recent-box.leisure-banner,
+.recent-box.podcast-banner {
+  grid-column: span 2;
+  background: #000; }
+
+.recent-box.collect-end,
+.recent-box.leisure-end,
+.recent-box.podcast-end {
+  grid-column: span 2;
+  background: #291361; }
 
 /*MEDIA Query*/
 @media (max-width: 991px) {
