@@ -92,3 +92,4 @@ function imgClick2Right(e){
 //Change the opacity to opacity Variable
   e.target.style.opacity = opacity;
 }
+

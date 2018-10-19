@@ -82,7 +82,7 @@ header nav {
 
 /*END HEADER NAVIGATION*/
 main {
-  margin: 5px 25rem;
+  margin: 5px 20em;
   background-color: linear-gradient(30deg, #252C38, #19112C); }
 
 .bg-full {
@@ -91,16 +91,38 @@ main {
   background-position: center, 100% 30em;
   -webkit-box-shadow: var(--shadow);
   box-shadow: var(--shadow);
-  height: 100vh; }
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 0px 20px;
+  z-index: 2; }
+
+.bg-quote p {
+  font-size: 4rem;
+  /*soft emboss text css*/
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3); }
 
 /**/
 .wrapper-grid {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   background: #fff;
-  width: 6fr;
-  height: 40vh;
+  width: 1020px;
+  height: 80vh;
   max-width: 100%;
   margin: 30px auto;
   padding: 5px; }
@@ -113,11 +135,38 @@ main {
   -webkit-box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3);
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.3); }
 
+.text-banner {
+  font-family: "BioRhyme", sans-serif;
+  font-size: 6rem;
+  margin: 0;
+  /*soft emboss text css*/
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 2px 8px 6px rgba(71, 6, 6, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3); }
+
 .recent-box.collect-banner,
 .recent-box.leisure-banner,
 .recent-box.podcast-banner {
   grid-column: span 2;
-  background: #000; }
+  grid-row: span 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.recent-box.collect-banner {
+  background-image: url(../img/banner-collect.jpeg); }
+
+.recent-box.leisure-banner {
+  background-image: url(../img/banner-leisure.jpeg); }
+
+.recent-box.podcast-banner {
+  background-image: url(../img/banner-podcast.jpeg); }
 
 .recent-box.collect-end,
 .recent-box.leisure-end,
@@ -125,7 +174,96 @@ main {
   grid-column: span 2;
   background: #291361; }
 
+/*essential styles:
+these make the slideshow work*/
+#CollectSlides {
+  position: relative;
+  height: 300px;
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none; }
+
+.slide {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s; }
+
+.showing {
+  opacity: 1;
+  z-index: 2; }
+
+.controls {
+  display: none; }
+
+/*End of required slide show markup*/
+.slide {
+  font-size: 40px;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #333;
+  color: #fff;
+  background-size: cover; }
+
+.slide:nth-of-type(1) {
+  background-color: red; }
+
+.slide:nth-of-type(2) {
+  background-color: yellow;
+  background-image: url("../img/wanted-sunman.jpg"); }
+
+.slide:nth-of-type(3) {
+  background-color: blue;
+  background-image: url("../img/wanted-pinhead.jpeg"); }
+
+.controls {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  margin: 5px 0px 0px 5px;
+  width: 70px; }
+
+.controls:hover,
+.controls:focus {
+  background: #eee;
+  color: #333; }
+
+.collect-wanted {
+  position: relative; }
+
+.buttons {
+  position: absolute;
+  left: 45px;
+  top: 280px;
+  z-index: 10;
+  font-size: 0px;
+  z-index: 16; }
+
+.overlay-wanted {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 15; }
+
 /*MEDIA Query*/
+@media (max-width: 1400px) {
+  main {
+    margin: 0 auto; } }
+
 @media (max-width: 991px) {
   header {
     padding: 0 20px; }

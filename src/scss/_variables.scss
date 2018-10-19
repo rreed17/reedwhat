@@ -1,6 +1,7 @@
 //Variables
 $body-bg: linear-gradient(30deg,#252C38, #19112C);
 $main-font: 'Cabin', sans-serif;
+$secondary-font: 'BioRhyme', sans-serif;
 
 $primary-color: #291361;
 $secondary-color: #637cce;
@@ -9,6 +10,10 @@ $dark-color: #252C38;
 $shadow: 0 1px 5px rgba(104,104,104, 0.8);
 $transparent: rgba(0,0,0,.8);
 
-$main-container: 5px 25rem;
+$main-container: 5px 20em;
+
+$banner-collect: url(../img/banner-collect.jpeg);
+$banner-leisure: url(../img/banner-leisure.jpeg);
+$banner-podcast: url(../img/banner-podcast.jpeg);
 /*
 $section-padding:*/
