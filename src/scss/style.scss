@@ -114,28 +114,49 @@ main{
 }
 
 /**/
+#RWCollects h2{
+  margin-top: 10vh;
+}
 .wrapper-grid{
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  background: #fff;
-  width: 1020px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  background:$body-bg;
   height: 80vh;
-  max-width: 100%;
   margin: 30px auto;
-  padding: 5px;
+  object-fit:cover;
 }
 .recent-box{
-  background-color: $secondary-color;
-  background-size: cover;
-  background-position: center;
-  background-repeat: none;
-  box-shadow: 1px 0 3px rgba(0, 0, 0, .3);
+    position: relative;
+    width:100%;
+    height:100%;
+    border-right: 1px solid #000;
+    box-sizing:border-box;
+    transition: 0.5s;
+    text-align:center;
+    overflow:hidden;
+}
+div.content{
+    position:absolute;
+    bottom:-100%;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,.8);
+    box-sizing:border-box;
+    color:#fff;
+    opacity:0;
+}
+.recent-box:hover .content{
+  bottom:0;
+  transition:0.5s;
+  transition-delay:0.5s;
+  opacity:1;
+
 }
 .text-banner{
   font-family: $secondary-font;
-  font-size: 6rem;
+  font-size: 5em;
   margin: 0;
   /*soft emboss text css*/
   text-transform: uppercase;
@@ -143,16 +164,7 @@ main{
   text-shadow: 2px 8px 6px rgba(71, 6, 6, 0.2),
                  0px -5px 35px rgba(255,255,255,0.3);
 }
-.recent-box.collect-banner,
-.recent-box.leisure-banner,
-.recent-box.podcast-banner{
-  grid-column: span 2;
-  grid-row: span 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-}
 .recent-box.collect-banner{
   background-image: $banner-collect;
 }
@@ -162,30 +174,32 @@ main{
 .recent-box.podcast-banner{
   background-image: $banner-podcast;
 }
-.recent-box.collect-end,
-.recent-box.leisure-end,
-.recent-box.podcast-end{
-  grid-column: span 2;
-  background: $primary-color;
+
+.recent-box.collect-news{
+  background-image: url("../img/collect-minimates.jpg");
 }
 /*essential styles:
 these make the slideshow work*/
+.collect-wanted{
+  position: relative;
+}
 #CollectSlides{
   position: relative;
-	height: 300px;
+	height: 100%;
 	padding: 0px;
 	margin: 0px;
-	list-style-type: none;
+  list-style-type: none;
+  max-width: 100%;
 }
 .slide{
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	width: 100%;
-	height: 100%;
+  height: 100%;
+  object-fit: cover;
 	opacity: 0;
 	z-index: 1;
-
 	-webkit-transition: opacity 1s;
 	-moz-transition: opacity 1s;
 	-o-transition: opacity 1s;
@@ -204,12 +218,14 @@ these make the slideshow work*/
 	padding: 40px;
 	box-sizing: border-box;
 	background: #333;
-	color: #fff;
+  color: #fff;
+  
   
   background-size: cover;
 }
 .slide:nth-of-type(1){
   background-color:red;
+  background-image: url("../img/wanted-mlblackpanther.jpg")
 }
 .slide:nth-of-type(2){
   background-color:yellow;
@@ -221,15 +237,15 @@ these make the slideshow work*/
 }
 
 .controls{
-  background: #333;
+  background: $primary-color;
   color: #fff;
   border: none;
-  padding: 10px 0px;
-  font-size: 20px;
+  padding: 2px 0px;
+  font-size: .7rem;
   cursor: pointer;
-  border: 2px solid #fff;
-  margin: 5px 0px 0px 5px;
-  width: 70px;
+  border: 2px solid $secondary-color;
+  margin: 5px 0px 0px 2px;
+  width: 10%;
 }
 
 .controls:hover,
@@ -237,20 +253,20 @@ these make the slideshow work*/
   background: #eee;
   color: #333;
 }
-.collect-wanted{
-  position: relative;
-}
 .buttons{
   position: absolute;
-  left: 45px;
-  top: 280px;
+  left: 20%;
+  top: 90%;
   z-index: 10;
   font-size: 0px;
   z-index: 16;
+  width: 80%;
 }
+/*End of Slide Show Code*/
 
 .overlay-wanted{
   position:absolute;
+  max-width: 100%;
   top: 50%;
   left: 50%;
   margin-right: -50%;
@@ -258,14 +274,22 @@ these make the slideshow work*/
   text-align: center;
   z-index: 15;
 }
-
-/*MEDIA Query*/
-@media (max-width: 1400px){
-  main{
-    margin: 0 auto;
-  }
+/*Background Images for each Grid Column*/
+/*Collect Section*/
+.collect-minimates{
+  background: url("../img/collect-minimates.jpg");
+  background-size: cover;
+  background-position: left;
 }
-@media (max-width: 991px){
+/*Leisure Section*/
+.leisure-reading-01{
+    background:url("../img/leisure-reading-01.png");
+    background-size:cover;
+    background-position:left;
+}
+/*Podcast Section*/
+/*MEDIA Query*/
+@media (max-width: 1450px){
   header{
     padding: 0 20px;
   }
@@ -293,5 +317,11 @@ these make the slideshow work*/
 
   header nav.active{
     left:0;
+  }
+  main{
+    margin: 5px 10px;
+  }
+  .bg-full{
+    display: none;
   }
 }
