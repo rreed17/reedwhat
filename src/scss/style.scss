@@ -76,7 +76,6 @@ header nav{
     background: $dark-color;
   }
 }
-
 .nav-menu-toggle{
   color:$light-color;
   float: right;
@@ -105,7 +104,7 @@ main{
   z-index: 2;
 }
 .bg-quote p{
-  font-size: 4rem;
+  font-size: 2em;
   /*soft emboss text css*/
   text-transform: uppercase;
   color: rgba(0,0,0,0.6);
@@ -121,9 +120,9 @@ main{
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(3fr, 1fr));
   background:$body-bg;
-  height: 80vh;
+  height: 100vh;
   margin: 30px auto;
   object-fit:cover;
 }
@@ -136,6 +135,13 @@ main{
     transition: 0.5s;
     text-align:center;
     overflow:hidden;
+    h1{
+      color:$secondary-color;
+      width:100%;
+      background-color: rgba(#000, 0.9);
+      padding-bottom: 4px;
+
+    }
 }
 div.content{
     position:absolute;
@@ -156,8 +162,9 @@ div.content{
 }
 .text-banner{
   font-family: $secondary-font;
-  font-size: 5em;
+  font-size: 3em;
   margin: 0;
+  background:rgba(0,0,0,.8);
   /*soft emboss text css*/
   text-transform: uppercase;
   color: rgba(0,0,0,0.6);
@@ -174,14 +181,15 @@ div.content{
 .recent-box.podcast-banner{
   background-image: $banner-podcast;
 }
-
-.recent-box.collect-news{
-  background-image: url("../img/collect-minimates.jpg");
+.recent-box.fav10-banner{
+  background-image: $banner-fav10;
 }
+
 /*essential styles:
 these make the slideshow work*/
 .collect-wanted{
   position: relative;
+  height: 100%;
 }
 #CollectSlides{
   position: relative;
@@ -219,23 +227,20 @@ these make the slideshow work*/
 	box-sizing: border-box;
 	background: #333;
   color: #fff;
-  
-  
   background-size: cover;
 }
 .slide:nth-of-type(1){
   background-color:red;
-  background-image: url("../img/wanted-mlblackpanther.jpg")
+  background-image: url("../img/wanted-swtbs-finn-17.jpg")
 }
 .slide:nth-of-type(2){
   background-color:yellow;
-  background-image: url("../img/wanted-sunman.jpg");
+  background-image: url("../img/wanted-mlv-thevision.jpg");
 }
 .slide:nth-of-type(3){
   background-color:blue;
   background-image: url("../img/wanted-pinhead.jpeg");
 }
-
 .controls{
   background: $primary-color;
   color: #fff;
@@ -247,7 +252,6 @@ these make the slideshow work*/
   margin: 5px 0px 0px 2px;
   width: 10%;
 }
-
 .controls:hover,
 .controls:focus{
   background: #eee;
@@ -263,6 +267,132 @@ these make the slideshow work*/
   width: 80%;
 }
 /*End of Slide Show Code*/
+
+.full-run-total{
+  display: grid;
+  width: 9rem;
+  height: 9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 2rem auto;
+  padding: 1rem;
+  display: inline-block;
+  background: rgba(99, 38, 133, 0.4);
+  border-radius: (2px);
+  box-shadow: (inset 0 2px 8px -2px #000);
+}
+.full-run-digit{
+  display: inline-grid;
+  height: 4rem;
+  width: 2.1em;
+  overflow: hidden;
+}
+.digit-container{
+  font-size: 4rem;
+  line-height:4rem;
+  -webkit-animation:slide infinite linear;
+  animation: slide 1 linear;
+  animation-play-state: paused;
+  
+}
+.digit-container:hover {
+  /* Toggle our animation play state to running when we are hovering over our sticker */
+  animation-play-state: running;
+}
+.digit-one {
+  -webkit-animation-duration: 1500ms;
+   animation-duration: 1500ms;
+}
+.digit-ten {
+  -webkit-animation-duration: 1400ms;
+   animation-duration: 1400ms;
+}
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateY(-10em);
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+  }
+}
+@keyframes slide {
+  from {
+    transform: translateY(-10em);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+/*TICKET TAPE CODE*/
+.ticker-wrap {
+  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 4rem;
+  background-color: rgba(#000, 0.9); 
+  padding-left: 100%;
+  box-sizing: content-box;
+.ticker {
+
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;  
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+
+  -webkit-animation-iteration-count: infinite; 
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+ -webkit-animation-name: ticker;
+         animation-name: ticker;
+  -webkit-animation-duration: 30s;
+          animation-duration: 30s;
+
+  &__item {
+
+    display: inline-block;
+
+    padding: 0 2rem;
+    font-size: 2rem;
+    color: white;   
+
+  }
+
+}
+
+}
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+
 
 .overlay-wanted{
   position:absolute;
@@ -281,11 +411,49 @@ these make the slideshow work*/
   background-size: cover;
   background-position: left;
 }
+.collect-videogame{
+  background: url("../img/collect-videogame.jpg");
+  background-size: cover;
+  background-position: left;
+}
+.collect-full-run{
+  background: url("../img/collect-full-run.jpg");
+  background-size: cover;
+  background-position: left;
+  grid-column: span 2;
+}
 /*Leisure Section*/
 .leisure-reading-01{
     background:url("../img/leisure-reading-01.png");
     background-size:cover;
     background-position:left;
+}
+/*Fav Top 10*/
+.fav10-scifi{
+  background:url("../img/fav10-scifi-bg.jpg");
+  background-size:cover;
+  background-position:left;
+}
+.fav10-horror{
+  background:url("../img/fav10-horror-bg.jpg");
+  background-size:cover;
+  background-position:left;
+}
+.fav10-dca{
+  background:url("../img/fav10-dca-bg.jpg");
+  background-size:cover;
+  background-position:left;
+}
+.fav10-anime{
+  background:url("../img/fav10-anime-bg.png");
+  background-size:cover;
+  background-position:left;
+}
+.fav10-mcu{
+  background:url("../img/fav10-mcu-bg.jpg");
+  background-size:cover;
+  background-position:left;
+  
 }
 /*Podcast Section*/
 /*MEDIA Query*/
@@ -303,11 +471,13 @@ these make the slideshow work*/
     background:$primary-color;
     top: 50px;
     left: -100%;
+    z-index: 3;
     transition: 0.5s;
 
     ul{
       display:block;
       text-align: center;
+     
     }
 
     ul li a{
@@ -323,5 +493,8 @@ these make the slideshow work*/
   }
   .bg-full{
     display: none;
+  }
+  .collect-full-run{
+    grid-column: span 1;
   }
 }
