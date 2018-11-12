@@ -279,10 +279,7 @@ div.content{
 
 /*essential styles:
 these make the slideshow work*/
-.collect-wanted{
-  position: relative;
-  height: 100%;
-}
+
 #CollectSlides{
   position: relative;
 	height: 100%;
@@ -323,7 +320,7 @@ these make the slideshow work*/
 }
 .slide:nth-of-type(1){
   background-color:red;
-  background-image: url("../img/wanted-swtbs-finn-17.jpg")
+  background-image: url("../img/wanted-swtbs-finn-17.jpg");
 }
 .slide:nth-of-type(2){
   background-color:yellow;
@@ -331,7 +328,19 @@ these make the slideshow work*/
 }
 .slide:nth-of-type(3){
   background-color:blue;
-  background-image: url("../img/wanted-pinhead.jpeg");
+  background-image: url("../img/wanted-jason.jpeg");
+}
+.slide:nth-of-type(4){
+  background-color:blue;
+  background-image: url("../img/wanted-leatherface.jpeg");
+}
+.slide:nth-of-type(5){
+  background-color:blue;
+  background-image: url("../img/wanted-myers.jpeg");
+}
+.slide:nth-of-type(6){
+  background-color:blue;
+  background-image: url("../img/wanted");
 }
 .controls{
   background: $primary-color;
