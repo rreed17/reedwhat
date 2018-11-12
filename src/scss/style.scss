@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=BioRhyme');
 @import url('https://fonts.googleapis.com/css?family=Cabin');
+@import url('fav10.scss');
 @import 'variables';
 
 //Resets
@@ -12,6 +13,7 @@
 html{
     box-sizing: border-box;
     font-family: $main-font;
+    border: 5px solid $transparent;
 }
 body {
     background: $body-bg;
@@ -23,76 +25,94 @@ body {
     line-height: 1.4;
     letter-spacing:0.3rem;
 }
-.top-banner
-{
-  padding: 10px 30px;
-}
-.banner-img-size
-{
-  width:150px;
-  height:100px;
-  border-radius: 50%;
-}
 /*HEADER NAVIGATION*/
-header{
+header
+{
   padding: 10px 30px;
-  position: absolute;
-  background:$primary-color;
-  top:133px;
-  left:0;
-  width:100%;
-  box-sizing: border-box;
+  .header-img-size
+    {
+      width:150px;
+      height:100px;
+      border-radius: 50%;
+    }
 }
-header .nav-logo{
-  color:$secondary-color;
-  height:50px;
-  line-height: 50px;
-  font-size: 2rem;
-  float: left;
-  font-weight: bold;
-}
-nav{
+nav
+{
   width:100%;
-  background:var(--transparent);
+  background:$transparent;
   border-top:1px solid rgba(255,255,255,.2);
   border-bottom:1px solid rgba(255,255,255,.2);
   position: sticky;
   top:0;
   z-index: 5;
-
+  
   ul{
-    margin:0;
-    padding: 0;
-    display: flex;
-  }
-  ul li{
-    list-style: none;
-  }
-  ul li a{
-    height: 50px;
-    line-height: 50px;
-    padding: 0 20px;
-    color: $light-color;
-    text-decoration: none;
-    display: block;
-  }
-  ul li a:hover,
-  ul li a.active{
-    color: $light-color;
-    background: $dark-color;
-  }
+      display:flex;
+      margin:0 auto;
+      padding:0 50px;
+    }
+
+    ul li{
+      list-style:none;
+      display:block;
+      position:relative;
+      padding:0 10px;
+      transition: all .5s ease-out;
+    }
+
+    ul li ul{
+      display: none;
+      position: absolute;
+      left:0;
+      background: rgba(255,255,255,.5);
+    }
+    ul li.active ul
+      {
+        display: block;
+      }
+    ul li ul li
+      {
+        display:block;
+        width:300px;
+      }
+    ul li:hover
+      {
+        background:$secondary-color;
+        color: $light-color;
+      }
+    ul li a
+      {
+        display:block;
+        color:$light-color;
+        text-decoration:none;
+        text-transform: uppercase;
+        font-weight:bold;
+        line-height:2.2em;
+      }
+  
 }
-.nav-menu-toggle{
-  color:$light-color;
-  float: right;
-  line-height: 50px;
-  font-size: 24px;
-  cursor: pointer;
-  display: none;
+.toggle
+{
+  width:100%;
+  padding:10px 20px;
+  background:var(--secondary);
+  text-align:right;
+  box-sizing: border-box;
+  color:#fff;
+  font-size:1.3em;
+  display:none;
+}
+.toggle i
+{
+  cursor:pointer;
 }
 /*END HEADER NAVIGATION*/
 main{
   margin:$main-container;
+  background-color:$body-bg;
+}
+#Fav10{
+  margin:$section-container;
   background-color:$body-bg;
 }
 .bg-full{
@@ -118,7 +138,69 @@ main{
                  0px -5px 35px rgba(255,255,255,0.3);
 }
 
-/**/
+/*Section Style*/
+#SectionHome.container{
+  width: 80vw;
+  height:75vh;
+  display:flex;
+}
+#SectionHome.container .box{
+  width:20vw;
+  text-align: center;
+  line-height:60vh;
+  flex-grow:1;
+  background-size:cover;
+  background-position: center;
+  transition: 1s;
+  overflow: hidden;
+}
+#SectionHome h1{
+  margin:0;
+  padding: 0;
+  line-height: 76vh;
+  font-size: 2em;
+  background:rgba(0,0,0,.8);
+  transition: .5s;
+}
+#SectionHome h1 span{
+  background: rgba(255,255,255,0);
+  width:100%;
+  transition:1s;
+  color:#fff;
+  padding:25px 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#SectionHome .box:hover h1 span{
+  color:#262626;
+  background: rgba(255,255,255,0.8);
+  letter-spacing: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+#SectionHome .box:hover h1{
+  background:rgba(0,0,0,0);
+}
+#SectionHome .box:hover{
+  width:100vw;
+  
+}
+#TopGenre.container .box:nth-child(1){
+  background: url(1.jpg);
+}
+#TopGenre.container .box:nth-child(2){
+  background: url(2.jpg);
+}
+#TopGenre.container .box:nth-child(3){
+  background: url(3.jpg);
+}
+#TopGenre.container .box:nth-child(4){
+  background: url(4.jpg);
+}
+#TopGenre.container .box:nth-child(5){
+  background: url(5.jpg);
+}
+
+/*End of Section Home Style*/
 #RWCollects h2{
   margin-top: 10vh;
 }
@@ -180,15 +262,19 @@ div.content{
 
 .recent-box.collect-banner{
   background-image: $banner-collect;
+  background-size: cover;
 }
 .recent-box.leisure-banner{
   background-image: $banner-leisure;
+  background-size: cover;
 }
 .recent-box.podcast-banner{
   background-image: $banner-podcast;
+  background-size: cover;
 }
 .recent-box.fav10-banner{
   background-image: $banner-fav10;
+  background-size: cover;
 }
 
 /*essential styles:
@@ -371,6 +457,10 @@ these make the slideshow work*/
 
 }
 
+.in-collection{
+  background-color: green;
+}
+
 }
 @-webkit-keyframes ticker {
   0% {
@@ -397,6 +487,8 @@ these make the slideshow work*/
     transform: translate3d(-100%, 0, 0);
   }
 }
+
+
 
 
 
@@ -434,6 +526,16 @@ these make the slideshow work*/
     background-size:cover;
     background-position:left;
 }
+.leisure-binging-01{
+  background:url("../img/leisure-binging-jojo.jpg");
+  background-size: cover;
+  background-position: left;
+}
+.leisure-playing-01{
+  background:url("../img/leisure-playing-stwiy.jpg");
+  background-size: cover;
+  background-position: left;
+}
 /*Fav Top 10*/
 .fav10-scifi{
   background:url("../img/fav10-scifi-bg.jpg");
@@ -464,35 +566,44 @@ these make the slideshow work*/
 /*Podcast Section*/
 /*MEDIA Query*/
 @media (max-width: 1450px){
+  body{
+    border: 20px solid $transparent;
+  }
   header{
     padding: 0 20px;
   }
-  .nav-menu-toggle{
+  .toggle{
     display:block;
   }
-  header nav{    
-    position: absolute;
-    width: 100%;
-    height: calc(50vh - 50px);
-    background:$primary-color;
-    top: 50px;
-    left: -100%;
-    z-index: 3;
-    transition: 0.5s;
-
-    ul{
-      display:block;
-      text-align: center;
-     
-    }
-
-    ul li a{
-      border-bottom: 1px solid rgba(0,0,0,.2);
-    }
+  nav ul
+  {
+    width:100%;
+    display:none;
   }
-
-  header nav.active{
-    left:0;
+  nav ul li
+  {
+    display:block;
+    text-align: center;
+    width:50%;
+  }
+  nav ul li:hover
+  {
+    background:$secondary-color;
+  }
+  .active-sub-menu
+  {
+    display:block;
+  }
+  nav ul li ul li{
+    display:none;
+  }
+  nav ul li.active ul
+  {
+    position:relative;
+    display:block;
+  }
+  nav ul li.active ul li{
+    display:flex;
   }
   main{
     margin: 5px 10px;

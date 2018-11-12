@@ -9,20 +9,8 @@
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="top-banner">
-      <img class="banner-img-size" src="/img/avatar_Black_Racer.png" alt="Avatar Black Racer">
-  </div>
     <header>
-       <div class="nav-logo">ReedWhat</div>
-       <nav>
-         <ul>
-           <li><a href="" class="active">Home</a></li>
-           <li><a href="">Collects</a></li>
-           <li><a href="">Leisure</a></li>
-           <li><a href="">Podcast</a></li>
-         </ul>
-       </nav>
-    <div class="nav-menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        <img class="header-img-size" src="img/avatar_Black_Racer.png" alt="Avatar Black Racer">
     </header>
      <!--Site Navigation-->
   <nav>
@@ -30,7 +18,7 @@
       <i class="fa fa-bars menu" aria-hidden="true"></i>
     </div>
     <ul>
-        <li class="site-logo page"><a href="#">ReedWhat...</a></li>
+        <li class="site-logo page"><a href="index.html">ReedWhat...</a></li>
       <li class="sub-menu"><a href="#ReedCollect">Collects</a>
         <ul>
           <li><a href="collect_video_games.html">Video Games</a></li>
@@ -128,7 +116,7 @@
                     <div class="ticker__item">Uncanny X-Men #320 </div>
                     <div class="ticker__item">X-Men Vol. 2 #40 </div>
                     <div class="ticker__item">Uncanny X-Men #321 </div>
-                    <div class="ticker__item">X-Men Vol. 2 #41 </div>
+                    <div class="ticker__item in-collection">X-Men Vol. 2 #41 </div>
                     <div class="ticker__item">Cable #20</div>
                     <!--<div class="ticker__item">Authentic bitters seitan pug single-origin coffee whatever.</div>
                     <div class="ticker__item">Letterpress chambray brunch.</div>
@@ -161,22 +149,40 @@
           <div class="recent-box leisure-reading-01">
               <h1>Pull List</h1>
               <div class="content">
-                <p>Now Reading Issue #9</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, nostrum!</p>
+                <p>Doomsday Clock (DC)</p>
+                <p>Now Reading Issue #8</p>
                 <a href="#">Read More...</a>
               </div>
           </div>
           <div class="recent-box leisure-watching"><h1>Binging</h1></div>
-          <div class="recent-box leisure-end"><h1>Playing</h1></div>
+          <div class="recent-box leisure-playing-01">
+            <h1>Now Playing</h1>
+            <div class="content">
+              <p>Scarface The World is Yours</p>
+              <p>OG XBOX </p>
+            </div>
+          </div>
           <div class="recent-box leisure-end"><h1>Streaming</h1></div>
-          <div class="recent-box leisure-end"><h1>Binging</h1></div>
+          <div class="recent-box leisure-binging-01">
+            <h1>Binging</h1>
+            <div class="content">
+              <p>JoJo Bizarre Adventure</p>
+              <p>Season 1 (Oct. 2012)</p>
+            </div>
+          </div>
        </div>
       
      </section>
      <section>
       <h2>ReedWhat Fav 10</h2>
      <div class="wrapper-grid">
-        <div class="recent-box fav10-banner"><p class="text-banner">Fav 10</p></div>
+        <div class="recent-box fav10-banner">
+          <p class="text-banner">Fav 10</p>
+          <div class="content">
+            <p>ONLY TEN</p>
+            <a href="fav10_home.html">SEE ALL</a>
+          </div>
+        </div>
         <div class="recent-box fav10-scifi"><h1>Sci-Fi</h1></div>
         <div class="recent-box fav10-horror"><h1>Horror</h1></div>
         <div class="recent-box fav10-mcu"><h1>MCU</h1></div>
@@ -201,11 +207,16 @@
     crossorigin="anonymous"></script>
 
     <script type="text/javascript">
-    $(document).ready(function(){
-      $('.nav-menu-toggle').click(function(){
-        $('nav').toggleClass('active')
-      })
-    })
+   $(document).ready(function(){
+  $('.menu').click(function(){
+    $(this).siblings().removeClass('active-sub-menu');
+    $('ul').toggleClass('active-sub-menu')
+  })
+  $('ul li').click(function(){
+    $(this).siblings().removeClass('active');
+    $(this).toggleClass('active');
+  })
+})
 
     var controls = document.querySelectorAll('.controls');
 for(var i=0; i<controls.length; i++){
