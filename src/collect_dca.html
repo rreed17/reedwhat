@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <title>ReedWhat Home</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img class="header-img-size" src="img/avatar_Black_Racer.png" alt="Avatar Black Racer">
+    </header>
+     <!--Site Navigation-->
+  <nav>
+    <div class="toggle">
+      <i class="fa fa-bars menu" aria-hidden="true"></i>
+    </div>
+    <ul>
+        <li class="site-logo page"><a href="index.html">ReedWhat...</a></li>
+      <li class="sub-menu"><a href="#ReedCollect">Collects</a>
+        <ul>
+          <li><a href="collect_video_games.html">Video Games</a></li>
+          <li><a href="collect_action_figures.html">Action Figures</a></li>
+          <li><a href="collect_dca.html">DC Animation</a></li>
+          <li><a href="collect_mcu.html">MCU</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#ReedLeisure">Leisure</a>
+        <ul>
+          <li><a href="#">Bing Shows</a></li>
+          <li><a href="#">Pull List</a></li>
+          <li><a href="#">Streamed Film</a></li>
+          <li><a href="#">Game Play</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#ReedPodcast">Podcast</a>
+        <ul>
+          <li><a href="#">Toon Spiral</a></li>
+          <li><a href="#">Anthology Aslum</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#ReedFav10">Fav 10</a>
+        <ul>
+          <li><a href="#">Sci-Fi</a></li>
+          <li><a href="#">Horror</a></li>
+          <li><a href="#">DC Animation</a></li>
+          <li><a href="#">MCU Bluray</a></li>
+          <li><a href="#">Anime</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <header>
+    <section id="HeaderDCAnim">
+      <div class="main">
+        <div class="layer1"></div>
+        <div class="layer2"></div>
+        <div class="content">
+          <h1>DC Animation</h1>
+          <p>Because the Live-Action is taking their time to get it right!</p>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section id="CollectDCAnimation">
+        <div class="container">
+            <div class="box">
+                <div class="imgBox">
+                  <img src="dc_sd.jpg" alt="Superman Doomsday">/
+                 
+                </div>
+                <div class="details">
+                  <div class="content">
+                  <h2>Superman: Doomsday</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aperiam illum,
+                    quisquam ratione maiores expedita, eos fuga necessitatibus est unde.</p>
+                </div>
+                </div>
+            </div>
+            <div class="box">
+              <div class="imgBox">
+                <img src="dc_jltnf.jpg" alt="Justice League The New Frontier"/>
+              </div>
+              <div class="details">
+                <div class="content">
+                <h2>Justice League: The New Frontier</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aperiam illum,
+                  quisquam ratione maiores expedita, eos fuga necessitatibus est unde.</p>
+              </div>
+            </div>
+            </div>
+            <div class="box">
+              <div class="imgBox">
+                <img src="dc_bgk.jpg" alt="">
+              </div>
+              <div class="details">
+                <div class="content">
+                <h2>Batman: Gotham Knight</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aperiam illum,
+                  quisquam ratione maiores expedita, eos fuga necessitatibus est unde.</p>
+              </div>
+            </div>
+            </div>
+            <div class="box">
+              <div class="imgBox">
+                <img src="dc_ww.jpg" alt="">
+              </div>
+              <div class="details">
+                <div class="content">
+                <h2>Wonder Woman</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aperiam illum,
+                  quisquam ratione maiores expedita, eos fuga necessitatibus est unde.</p>
+              </div>
+            </div>
+            </div>
+            <div class="box">
+              <div class="imgBox">
+                <img src="dc_glff.jpg" alt="">
+              </div>
+              <div class="details">
+                <div class="content">
+                <h2>Green Lantern: First Flight</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae aperiam illum,
+                  quisquam ratione maiores expedita, eos fuga necessitatibus est unde.</p>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+    </section>
+  
+</main>
+<script
+src="http://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$('.menu').click(function(){
+$(this).siblings().removeClass('active-sub-menu');
+$('ul').toggleClass('active-sub-menu')
+})
+$('ul li').click(function(){
+$(this).siblings().removeClass('active');
+$(this).toggleClass('active');
+})
+})
+</script>
+</body>
+</html>

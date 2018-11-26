@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <title>ReedWhat Home</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img class="header-img-size" src="img/avatar_Black_Racer.png" alt="Avatar Black Racer">
+    </header>
+     <!--Site Navigation-->
+  <nav>
+    <div class="toggle">
+      <i class="fa fa-bars menu" aria-hidden="true"></i>
+    </div>
+    <ul>
+        <li class="site-logo page"><a href="index.html">ReedWhat...</a></li>
+      <li class="sub-menu"><a href="#ReedCollect">Collect</a>
+        <ul>
+          <li><a href="collect_video_games.html">Video Games</a></li>
+          <li><a href="collect_action_figures.html">Action Figures</a></li>
+          <li><a href="collect_dca.html">DC Animation</a></li>
+          <li><a href="collect_mcu.html">MCU</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#ReedLeisure">Leisure</a>
+        <ul>
+          <li><a href="#">Bing Shows</a></li>
+          <li><a href="#">Pull List</a></li>
+          <li><a href="#">Streamed Film</a></li>
+          <li><a href="#">Game Play</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#ReedPodcast">Podcast</a>
+        <ul>
+          <li><a href="#">Toon Spiral</a></li>
+          <li><a href="#">Anthology Aslum</a></li>
+        </ul>
+      </li>
+      <li class="sub-menu"><a href="#ReedFav10">Fav 10</a>
+        <ul>
+          <li><a href="#">Sci-Fi</a></li>
+          <li><a href="#">Horror</a></li>
+          <li><a href="#">DC Animation</a></li>
+          <li><a href="#">MCU Bluray</a></li>
+          <li><a href="#">Anime</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="bg-full">
+    <section id="FullBg"></section>
+    <div class="bg-quote">
+      <p>Updates Mondays Nights...</p>
+    </div>
+  </div>
+  <main id="collect">
+    <article class="comic-wrapper">
+      
+       <div class="comic-title">
+         <span>Event</span><span>Age of Apocalypse</span>
+       </div>
+      <div class="comic-description">
+        <p>Legion,  a psychotic mutant and son of Professor Charles Xavier,  travels back in time with the intention of killing Magneto.  
+          However,  Legion travels to a time when Magneto and Xavier were still friends.  As Xavier dies trying to protect Magneto,  
+          Legion vanishes,  and a new timeline is created.</p>
+      </div>
+      <div class="comic-detail">
+          <p>Year Published: 1995</li>
+          <p>Featured Characters: X-Men, Apocalypse</li>
+        
+      </div>
+      <div class="comic-count">
+        <p>58</p>
+        <p>issues</p>
+      </div>
+      <div class="comic-issues">Issues</div>
+      
+      
+    </article>
+    <div id="full-run">
+
+    </div>
+    <div id="event">
+
+    </div>
+      <div class="comic-fullrun-banner">
+          <h1>Comic Books Full Run</h1>
+      </div>
+      <nav class="comics-nav">
+          <ul>
+              <li>Full Run</li>
+              <li>Event</li>
+          </ul>
+      </nav>
+
+      <section class="full-run-section">
+            <div class="full-run-container">
+                <h3>The New Warriors</h3>
+                <div class="description">
+                    <p>This is description</p>
+                </div>
+                <div class="notes">
+                    <ul>
+                        <li>Year Published:</li>
+                        <li>Featured Characters</li>
+                    </ul>
+                </div>
+                <div class="issue-count">
+                    Numbers
+                    <p>issues</p>
+                </div>
+                
+            </div>
+      </section>
+      <section class="event-section">
+
+      </section>
+  </main>
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+ $(document).ready(function(){
+$('.menu').click(function(){
+  $(this).siblings().removeClass('active-sub-menu');
+  $('ul').toggleClass('active-sub-menu')
+})
+$('ul li').click(function(){
+  $(this).siblings().removeClass('active');
+  $(this).toggleClass('active');
+})
+})
+</script>
+</body>
+
+</html>

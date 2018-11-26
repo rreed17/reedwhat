@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-  <title>ReedWhat Only 10</title>
+  <title>ReedWhat Leisure</title>
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/style_fav10.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <img class="header-img-size" src="img/banner-fav10.jpeg" alt="Fav 10">
+        <img class="header-img-size" src="img/banner-leisure.jpg" alt="Leisure">
     </header>
      <!--Site Navigation-->
   <nav>
@@ -20,20 +19,20 @@
     </div>
     <ul>
         <li class="site-logo page"><a href="index.html">ReedWhat...</a></li>
-      <li class="sub-menu"><a href="#ReedCollect">Collects</a>
+      <li class="sub-menu"><a href="#ReedCollect">Collect</a>
         <ul>
           <li><a href="collect_video_games.html">Video Games</a></li>
           <li><a href="collect_action_figures.html">Action Figures</a></li>
-          <li><a href="collect_dcanimation.html">DC Animation</a></li>
+          <li><a href="collect_dca.html">DC Animation</a></li>
           <li><a href="collect_mcu.html">MCU</a></li>
         </ul>
       </li>
       <li class="sub-menu"><a href="#ReedLeisure">Leisure</a>
         <ul>
-          <li><a href="genre_top_10.html">Genre Top 10s</a></li>
-          <li><a href="leisure_mcu.html">MCU Blurays</a></li>
-          <li><a href="#">Link 3</a></li>
-          <li><a href="#">Link 4</a></li>
+          <li><a href="leisure_home.html">Binging</a></li>
+          <li><a href="leisure_home.html">Pull List</a></li>
+          <li><a href="leisure_home.html">Stream</a></li>
+          <li><a href="leisure_home.html">Games Played</a></li>
         </ul>
       </li>
       <li class="sub-menu"><a href="#ReedPodcast">Podcast</a>
@@ -48,40 +47,46 @@
           <li><a href="#">Horror</a></li>
           <li><a href="#">DC Animation</a></li>
           <li><a href="#">MCU Bluray</a></li>
+          <li><a href="#">Anime</a></li>
         </ul>
       </li>
     </ul>
   </nav>
-  <main id="Fav10">
-        <section>
-                <div id="SectionHome" class="container">
-                  <div class="box">
-                      <h1><span>Horror</span></h1></div>
-                  <div class="box"><h1><span>Sci-Fi</span></h1></div>
-                  <div class="box"><h1><span>Anime</span></h1></div>
-                  <div class="box"><h1><span>DCA</span></h1></div>
-                  <div class="box"><h1><span>MCU</span></h1></div>
-                </div>
-              </section>
-  </main>
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
+  <main id="Leisure">
+    <section>
+            <div id="SectionHome" class="container">
+              <div class="box">
+                  <h1><span>Pull List</span></h1>
+                 
+              </div>
+              <div class="box"><h1><span>Stream</span></h1>
+                
+            </div>
+              <div class="box"><h1><span>Binge TV</span></h1>
+              
+            </div>
+              <div class="box"><h1><span>DCA</span></h1></div>
+              <div class="box"><h1><span>MCU</span></h1></div>
+            </div>
+          </section>
+</main>
+    <script
+    src="http://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
 
-  <script type="text/javascript">
- $(document).ready(function(){
-$('.menu').click(function(){
-  $(this).siblings().removeClass('active-sub-menu');
-  $('ul').toggleClass('active-sub-menu')
+    <script type="text/javascript">
+   $(document).ready(function(){
+  $('.menu').click(function(){
+    $(this).siblings().removeClass('active-sub-menu');
+    $('ul').toggleClass('active-sub-menu')
+  })
+  $('ul li').click(function(){
+    $(this).siblings().removeClass('active');
+    $(this).toggleClass('active');
+  })
 })
-$('ul li').click(function(){
-  $(this).siblings().removeClass('active');
-  $(this).toggleClass('active');
-})
-})
-
-   </script>
+</script>
 </body>
 
 </html>

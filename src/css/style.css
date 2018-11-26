@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=BioRhyme");
 @import url("https://fonts.googleapis.com/css?family=Cabin");
+@import url("comics.scss");
 @import url("fav10.scss");
 /*
 $section-padding:*/
@@ -24,6 +25,9 @@ body {
   color: #3B02D0;
   line-height: 1.4;
   letter-spacing: 0.3rem; }
+
+a {
+  color: yellow; }
 
 /*HEADER NAVIGATION*/
 header {
@@ -59,7 +63,7 @@ nav {
     display: none;
     position: absolute;
     left: 0;
-    background: rgba(255, 255, 255, 0.5); }
+    background: rgba(255, 255, 255, 0.9); }
   nav ul li.active ul {
     display: block; }
   nav ul li ul li {
@@ -75,6 +79,8 @@ nav {
     text-transform: uppercase;
     font-weight: bold;
     line-height: 2.2em; }
+  nav ul li ul li a {
+    color: #252C38; }
 
 .toggle {
   width: 100%;
@@ -122,7 +128,7 @@ main {
   z-index: 2; }
 
 .bg-quote p {
-  font-size: 2em;
+  font-size: 3em;
   /*soft emboss text css*/
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.6);
@@ -197,16 +203,14 @@ main {
   background: url(5.jpg); }
 
 /*End of Section Home Style*/
-#RWCollects h2 {
-  margin-top: 10vh; }
-
 .wrapper-grid {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(3fr, 1fr));
-  background: linear-gradient(30deg, #252C38, #543E8D);
-  height: 80vh;
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  background: rgba(0, 0, 0, 0.8);
+  border: 5px solid black;
+  height: 100vh;
   margin: 30px auto;
   -o-object-fit: cover;
   object-fit: cover; }
@@ -335,7 +339,7 @@ these make the slideshow work*/
 
 .slide:nth-of-type(6) {
   background-color: blue;
-  background-image: url("../img/wanted"); }
+  background-image: url("../img/wanted-machinerobo-mrdx-01.jpg"); }
 
 .controls {
   background: #543E8D;
@@ -365,11 +369,11 @@ these make the slideshow work*/
 /*End of Slide Show Code*/
 .full-run-total {
   display: grid;
-  width: 9rem;
+  width: 9em;
   height: 9rem;
   color: rgba(255, 255, 255, 0.9);
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 1rem;
+  padding: .8rem;
   display: inline-block;
   background: rgba(99, 38, 133, 0.4);
   border-radius: 2px;
@@ -393,7 +397,8 @@ these make the slideshow work*/
 .digit-container:hover {
   /* Toggle our animation play state to running when we are hovering over our sticker */
   -webkit-animation-play-state: running;
-  animation-play-state: running; }
+  animation-play-state: running;
+  cursor: progress; }
 
 .digit-one {
   -webkit-animation-duration: 1500ms;
@@ -436,14 +441,15 @@ these make the slideshow work*/
     padding-right: 100%;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+    will-change: auto;
     -webkit-animation-iteration-count: infinite;
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
     -webkit-animation-name: ticker;
     animation-name: ticker;
-    -webkit-animation-duration: 30s;
-    animation-duration: 30s; }
+    -webkit-animation-duration: 60s;
+    animation-duration: 60s; }
     .ticker-wrap .ticker__item {
       display: inline-block;
       padding: 0 2rem;
@@ -489,9 +495,10 @@ these make the slideshow work*/
   background-position: left; }
 
 .collect-videogame {
-  background: url("../img/collect-videogame.jpg");
+  background: url("../img/collect-videogame.png");
   background-size: cover;
-  background-position: left; }
+  background-position: left;
+  background-color: orange; }
 
 .collect-full-run {
   background: url("../img/collect-full-run.jpg");
@@ -499,21 +506,57 @@ these make the slideshow work*/
   background-position: left;
   grid-column: span 2; }
 
+.collect-milestone-run {
+  background: url("../img/collect-milestone-run.jpg");
+  background-size: cover;
+  background-position: left;
+  grid-column: span 3; }
+
 /*Leisure Section*/
 .leisure-reading-01 {
-  background: url("../img/leisure-reading-01.png");
+  background: url("../img/leisure-comic-01.png");
   background-size: cover;
   background-position: left; }
 
-.leisure-binging-01 {
+.leisure-reading-ff2018 {
+  background: url("../img/leisure-comic-ff2018.jpg");
+  background-size: cover;
+  background-position: center; }
+
+.leisure-binging-jojo {
   background: url("../img/leisure-binging-jojo.jpg");
   background-size: cover;
-  background-position: left; }
+  background-position: center; }
 
-.leisure-playing-01 {
-  background: url("../img/leisure-playing-stwiy.jpg");
+.leisure-binging-ahp {
+  background: url("../img/leisure-binging-ahp.jpg");
   background-size: cover;
   background-position: left; }
+
+.leisure-playing-stwiy {
+  background: url("../img/leisure-playing-stwiy.jpg");
+  background-size: cover;
+  background-position: center; }
+
+.leisure-stream-h3hoe {
+  background: url("../img/leisure-stream-h3hoe.jpg");
+  background-size: cover;
+  background-position: center; }
+
+.leisure-stream-dhrftg {
+  background: url("../img/leisure-stream-dhrftg.jpg");
+  background-size: cover;
+  background-position: center; }
+
+.leisure-stream-swtlj {
+  background: url("../img/leisure-stream-swtlj.jpg");
+  background-size: cover;
+  background-position: center; }
+
+.leisure-binging-ctas {
+  background: url("../img/leisure-binging-ctas.jpg");
+  background-size: cover;
+  background-position: center; }
 
 /*Fav Top 10*/
 .fav10-scifi {
@@ -541,7 +584,283 @@ these make the slideshow work*/
   background-size: cover;
   background-position: left; }
 
+/*****************************************************************************************************************************************************/
+/*                                                        Comics Style Sheet                                                                         */
+/*****************************************************************************************************************************************************/
+.comic-title {
+  grid-area: title;
+  font-size: 2em; }
+
+.comic-description {
+  grid-area: description; }
+
+.comic-description p {
+  padding: 20px;
+  font-size: .9em;
+  margin: 0 0 1.313em;
+  text-align: justify; }
+
+.comic-detail {
+  grid-area: detail; }
+
+.comic-detail p {
+  font-size: .7em;
+  margin: 0 0 1.313em;
+  padding: 20px; }
+
+.comic-count {
+  grid-area: totalCount; }
+
+.comic-issue {
+  grid-area: issue; }
+
+.comic-wrapper {
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "title title" "description detail" "totalCount totalCount" "issue issue";
+  background-color: #fff;
+  color: #444; }
+
+/*****************************************************************************************************************************************************/
+/*                                                        Common List Page with Style                                                                */
+/*****************************************************************************************************************************************************/
+#Stream {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px; }
+
+.list-wrapper {
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); }
+  .list-wrapper p {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 22px; }
+
+.list-wrappper h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 27px; }
+
+.list-img-circle {
+  width: 200px;
+  height: 175px;
+  background-position: center;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  /*The key for this to work*/
+  margin: 30px 30px 5px 0;
+  /*How to position the circle or photo*/ }
+
+/*****************************************************************************************************************************************************/
+/*                                                        Commom Home Page Style                                                                     */
+/*****************************************************************************************************************************************************/
+/*****************************************************************************************************************************************************/
+/*                                                        Leisure Style Sheet                                                                         */
+/*****************************************************************************************************************************************************/
+#Stream {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px; }
+
+.leisure-wrapper {
+  width: 100%;
+  height: 300px;
+  padding: 15px;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); }
+  .leisure-wrapper p {
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    line-height: 22px; }
+
+.leisure-wrappper h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 27px; }
+
+.leisure-circle {
+  width: 200px;
+  height: 175px;
+  background: url("../img/leisure-stream-h3hoe.jpg");
+  background-position: center;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  /*The key for this to work*/
+  margin: 30px 30px 5px 0;
+  /*How to position the circle or photo*/ }
+
+/*DC Animation Styles*/
+#CollectDCAnimation .container {
+  margin: 70px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 35px; }
+
 /*Podcast Section*/
+/*collect_vide_games.html*/
+/*Collects video games content boxes*/
+.section {
+  text-align: center;
+  padding: 50px 80px; }
+
+.section-light {
+  background-color: linear-gradient(30deg, #252C38, #543E8D);
+  color: #666; }
+
+.section-dark {
+  background-color: #282e34;
+  color: #ddd; }
+
+.ptext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 2em;
+  letter-spacing: 8px;
+  text-transform: uppercase; }
+
+.ptext .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px; }
+
+.collectsxboximg, .collectsxbox360img, .collectsxboxoneimg {
+  position: relative;
+  opacity: .70;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*fixed = Parallax
+    scroll = normal
+  */
+  background-attachment: fixed; }
+
+.collectsxboximg {
+  background-image: url("../img/collectsxboximg.png");
+  min-height: 800px; }
+
+.collectsxbox360img {
+  background-image: url("../img/collectsxbox360.png");
+  min-height: 800px; }
+
+.collectsxboxoneimg {
+  background-image: url("../img/collectsxboxoneimg.png");
+  min-height: 800px; }
+
+.container-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px; }
+
+.container-content .box-content {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background: #7EB900;
+  margin: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden; }
+
+.container-content .box-content .imgBox-content {
+  position: relative;
+  overflow: hidden; }
+
+.container-content .box-content .imgBox-content img {
+  max-width: 100%;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s; }
+
+.container-content .box-content:hover .imgBox-content img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); }
+
+.container-content .box-content .details-content {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s; }
+
+.container-content .box-content:hover .details-content {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1); }
+
+.container-content .box-content .details-content .content-details {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 15px;
+  color: #fff; }
+
+.container-content .box-content .details-content .content-details h2 {
+  margin: 0;
+  padding: 0;
+  font-size: .5em;
+  color: #ff0; }
+
+.container-content .box-content .details-content .content-details p {
+  margin: 10px 0 0;
+  padding: 0; }
+
+.sidebar-vg {
+  grid-area: sidebar-vg; }
+
+.content-vg {
+  grid-area: content-vg; }
+
+.header-vg {
+  grid-area: header-vg; }
+
+.wrapper-vg {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 35rem 35rem 35rem;
+  grid-template-areas: "sidebar-vg header-vg header-vg" "sidebar-vg content-vg content-vg" "sidebar-vg content-vg content-vg";
+  background-color: #107C10;
+  color: #444; }
+
+.box-vg {
+  background-color: #543E8D;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%; }
+
+.header-vg {
+  background-color: #C1C0C2; }
+
 /*MEDIA Query*/
 @media (max-width: 1450px) {
   body {
@@ -575,4 +894,11 @@ these make the slideshow work*/
   .bg-full {
     display: none; }
   .collect-full-run {
-    grid-column: span 1; } }
+    grid-column: span 1; }
+  .wrapper-vg {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "sidebar-vg header-vg" "sidebar-vg content-vg" "sidebar-vg content-vg";
+    background-color: #107C10;
+    color: #444; } }
