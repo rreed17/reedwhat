@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Cabin");
 @import url("comics.scss");
 @import url("fav10.scss");
-@import url("imgGallery.scss");
 /*
 $section-padding:*/
 * {
@@ -18,7 +17,7 @@ html {
   border: 5px solid rgba(0, 0, 0, 0.8); }
 
 body {
-  background: linear-gradient(30deg, #252C38, #543E8D);
+  background: linear-gradient(30deg, #252C38, #262626);
   background-attachment: fixed;
   background-position: center;
   font-size: 1.2rem;
@@ -71,7 +70,7 @@ nav {
     display: block;
     width: 300px; }
   nav ul li:hover {
-    background: #637cce;
+    background: #fff8;
     color: #F4F6F7; }
   nav ul li a {
     display: block;
@@ -86,7 +85,7 @@ nav {
 .toggle {
   width: 100%;
   padding: 10px 20px;
-  background: var(--secondary);
+  background: #fff8;
   text-align: right;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -100,11 +99,33 @@ nav {
 /*END HEADER NAVIGATION*/
 main {
   margin: 5px 20em;
-  background-color: linear-gradient(30deg, #252C38, #543E8D); }
+  background-color: linear-gradient(30deg, #252C38, #262626); }
+  main h2 {
+    font-size: 3em;
+    border-bottom: 4px solid #FFDD1A;
+    text-transform: uppercase; }
+    main h2 a {
+      text-decoration: none;
+      color: #FFDD1B; }
+    main h2 a:hover {
+      -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+      animation: neon2 1.5s ease-in-out infinite alternate; }
+
+@-webkit-keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1A, 0 0 70px #FFDD1A, 0 0 80px #FFDD1A, 0 0 100px #FFDD1A, 0 0 150px #FFDD1A; }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1A, 0 0 35px #FFDD1A, 0 0 40px #FFDD1A, 0 0 50px #FFDD1A, 0 0 75px #FFDD1A; } }
+
+@keyframes neon2 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1A, 0 0 70px #FFDD1A, 0 0 80px #FFDD1A, 0 0 100px #FFDD1A, 0 0 150px #FFDD1A; }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1A, 0 0 35px #FFDD1A, 0 0 40px #FFDD1A, 0 0 50px #FFDD1A, 0 0 75px #FFDD1A; } }
 
 #Fav10 {
   margin: 0px 5em;
-  background-color: linear-gradient(30deg, #252C38, #543E8D); }
+  background-color: linear-gradient(30deg, #252C38, #262626); }
 
 .bg-full {
   background-image: url("../img/bgfull2.png");
@@ -133,7 +154,7 @@ main {
   /*soft emboss text css*/
   text-transform: uppercase;
   color: rgba(0, 0, 0, 0.6);
-  text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3); }
+  text-shadow: 2px 8px 6px rgba(255, 255, 255, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3); }
 
 /*Section Style*/
 #SectionHome.container {
@@ -208,9 +229,9 @@ main {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, minmax(300px, 1fr));
   background: rgba(0, 0, 0, 0.8);
   border: 5px solid black;
-  height: 100vh;
   margin: 30px auto;
   -o-object-fit: cover;
   object-fit: cover; }
@@ -227,18 +248,29 @@ main {
   text-align: center;
   overflow: hidden; }
   .recent-box h1 {
-    color: #637cce;
+    color: #fff8;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.9);
     padding-bottom: 4px; }
 
-.recent-box:hover .content {
+.recent-box:hover .content-home {
   bottom: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   -webkit-transition-delay: 0.5s;
   transition-delay: 0.5s;
   opacity: 1; }
+
+div.content-home {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  opacity: 0; }
 
 .text-banner {
   font-family: "BioRhyme", sans-serif;
@@ -299,7 +331,7 @@ these make the slideshow work*/
 /*End of required slide show markup*/
 .slide {
   font-size: 40px;
-  padding: 40px;
+  padding: 35px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #333;
@@ -331,25 +363,25 @@ these make the slideshow work*/
   background-image: url("../img/wanted-machinerobo-mrdx-01.jpg"); }
 
 .controls {
-  background: #543E8D;
-  color: #fff;
+  background: #fff;
+  color: green;
   border: none;
   padding: 2px 0px;
-  font-size: .7rem;
+  font-size: 1rem;
   cursor: pointer;
-  border: 2px solid #637cce;
+  border: 2px solid #fff8;
   margin: 5px 0px 0px 2px;
   width: 10%; }
 
 .controls:hover,
 .controls:focus {
-  background: #eee;
+  background: green;
   color: #333; }
 
 .buttons {
   position: absolute;
-  left: 20%;
-  top: 90%;
+  left: 40%;
+  top: 85%;
   z-index: 10;
   font-size: 0px;
   z-index: 16;
@@ -467,7 +499,7 @@ these make the slideshow work*/
 
 .overlay-wanted {
   position: absolute;
-  max-width: 100%;
+  max-width: 120%;
   top: 50%;
   left: 50%;
   margin-right: -50%;
@@ -492,8 +524,17 @@ these make the slideshow work*/
 .collect-full-run {
   background: url("../img/collect-full-run.jpg");
   background-size: cover;
-  background-position: left;
-  grid-column: span 2; }
+  background-position: left; }
+
+.collect-comics-01 {
+  background: url("../img/collect-full-run.jpg");
+  background-size: cover;
+  background-position: left; }
+
+.collect-comics-02 {
+  background: url("../img/collect-01.jpg");
+  background-size: cover;
+  background-position: left; }
 
 .collect-milestone-run {
   background: url("../img/collect-milestone-run.jpg");
@@ -574,6 +615,78 @@ these make the slideshow work*/
   background-position: left; }
 
 /*****************************************************************************************************************************************************/
+/*                                                        Diamond Layout MCU Page                                                                   */
+/*****************************************************************************************************************************************************/
+#PhaseOne .container {
+  margin: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(397px, 1fr));
+  grid-gap: 25px; }
+
+#PhaseOne .container .box {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  background: #ff0;
+  margin: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden; }
+
+#PhaseOne .container .box .imgBox {
+  position: relative;
+  overflow: hidden; }
+
+#PhaseOne .container .box .imgBox img {
+  max-width: 100%;
+  -webkit-transition: -webkit-transform 2s;
+  transition: -webkit-transform 2s;
+  transition: transform 2s;
+  transition: transform 2s, -webkit-transform 2s; }
+
+#PhaseOne .container .box:hover .imgBox img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2); }
+
+#PhaseOne .container .box .details {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s; }
+
+#PhaseOne .container .box:hover .details {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1); }
+
+#PhaseOne .container .box .details .content-mcu {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 15px;
+  color: #fff; }
+
+#PhaseOne .container .box .details .content-mcu h2 {
+  margin: 0;
+  padding: 0;
+  font-size: .8em;
+  color: #ff0; }
+
+#PhaseOne .container .box .details .content-mcu p {
+  margin: 10px 0 0;
+  padding: 0; }
+
+/*****************************************************************************************************************************************************/
 /*                                                        Comics Style Sheet                                                                         */
 /*****************************************************************************************************************************************************/
 .comic-title {
@@ -650,18 +763,6 @@ these make the slideshow work*/
   /*The key for this to work*/
   margin: 30px 30px 5px 0;
   /*How to position the circle or photo*/ }
-
-/*This box is to show content when user hover on the element*/
-div.content {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #fff;
-  opacity: 0; }
 
 /*****************************************************************************************************************************************************/
 /*                                                        Commom Home Page Style                                                                     */
@@ -786,7 +887,7 @@ div.content {
   padding: 50px 80px; }
 
 .section-light {
-  background-color: linear-gradient(30deg, #252C38, #543E8D);
+  background-color: linear-gradient(30deg, #252C38, #262626);
   color: #666; }
 
 .section-dark {
@@ -917,7 +1018,7 @@ div.content {
   color: #444; }
 
 .box-vg {
-  background-color: #543E8D;
+  background-color: #fff;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -925,45 +1026,3 @@ div.content {
 
 .header-vg {
   background-color: #C1C0C2; }
-
-/*MEDIA Query*/
-@media (max-width: 1450px) {
-  body {
-    border: 20px solid rgba(0, 0, 0, 0.8); }
-  header {
-    padding: 0 20px; }
-  .toggle {
-    display: block; }
-  nav ul {
-    width: 100%;
-    display: none; }
-  nav ul li {
-    display: block;
-    text-align: center;
-    width: 50%; }
-  nav ul li:hover {
-    background: #637cce; }
-  .active-sub-menu {
-    display: block; }
-  nav ul li ul li {
-    display: none; }
-  nav ul li.active ul {
-    position: relative;
-    display: block; }
-  nav ul li.active ul li {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
-  main {
-    margin: 5px 10px; }
-  .bg-full {
-    display: none; }
-  .collect-full-run {
-    grid-column: span 1; }
-  .wrapper-vg {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "sidebar-vg header-vg" "sidebar-vg content-vg" "sidebar-vg content-vg";
-    background-color: #107C10;
-    color: #444; } }

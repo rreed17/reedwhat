@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin');
 @import url('comics.scss');
 @import url('fav10.scss');
-@import url('imgGallery.scss');
 @import 'variables';
 
 //Resets
@@ -104,7 +103,7 @@ nav
 {
   width:100%;
   padding:10px 20px;
-  background:var(--secondary);
+  background:$secondary-color;
   text-align:right;
   box-sizing: border-box;
   color:#fff;
@@ -119,7 +118,33 @@ nav
 main{
   margin:$main-container;
   background-color:$body-bg;
+
+  h2{
+    font-size: 3em;
+    border-bottom: 4px solid #FFDD1A;
+    text-transform: uppercase;
+
+    a{
+      text-decoration: none;
+      color: #FFDD1B;
+    }
+
+    a:hover {
+      -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+      -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+      animation: neon2 1.5s ease-in-out infinite alternate;
+    }
+  }
+  @keyframes neon2 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1A, 0 0 70px #FFDD1A, 0 0 80px #FFDD1A, 0 0 100px #FFDD1A, 0 0 150px #FFDD1A;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1A, 0 0 35px #FFDD1A, 0 0 40px #FFDD1A, 0 0 50px #FFDD1A, 0 0 75px #FFDD1A;
+    }
+  }
 }
+
 #Fav10{
   margin:$section-container;
   background-color:$body-bg;
@@ -143,7 +168,7 @@ main{
   /*soft emboss text css*/
   text-transform: uppercase;
   color: rgba(0,0,0,0.6);
-  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+  text-shadow: 2px 8px 6px rgba(255,255,255,0.2),
                  0px -5px 35px rgba(255,255,255,0.3);
 }
 
@@ -214,10 +239,9 @@ main{
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  
+  grid-template-rows:repeat(3, minmax(300px, 1fr));
   background:$transparent;
   border: 5px solid black;
-  height: 100vh;
   margin: 30px auto;
   object-fit:cover;
 }
@@ -235,15 +259,24 @@ main{
       width:100%;
       background-color: rgba(#000, 0.9);
       padding-bottom: 4px;
-
     }
 }
-.recent-box:hover .content{
+.recent-box:hover .content-home{
   bottom:0;
   transition:0.5s;
   transition-delay:0.5s;
   opacity:1;
 
+}
+div.content-home{
+  position:absolute;
+  bottom:-100%;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.8);
+  box-sizing:border-box;
+  color:#fff;
+  opacity:0;
 }
 .text-banner{
   font-family: $secondary-font;
@@ -309,7 +342,7 @@ these make the slideshow work*/
 /*End of required slide show markup*/
 .slide{
 	font-size: 40px;
-	padding: 40px;
+	padding: 35px;
 	box-sizing: border-box;
 	background: #333;
   color: #fff;
@@ -341,10 +374,10 @@ these make the slideshow work*/
 }
 .controls{
   background: $primary-color;
-  color: #fff;
+  color: green;
   border: none;
   padding: 2px 0px;
-  font-size: .7rem;
+  font-size: 1rem;
   cursor: pointer;
   border: 2px solid $secondary-color;
   margin: 5px 0px 0px 2px;
@@ -352,13 +385,13 @@ these make the slideshow work*/
 }
 .controls:hover,
 .controls:focus{
-  background: #eee;
+  background: green;
   color: #333;
 }
 .buttons{
   position: absolute;
-  left: 20%;
-  top: 90%;
+  left: 40%;
+  top: 85%;
   z-index: 10;
   font-size: 0px;
   z-index: 16;
@@ -496,13 +529,9 @@ these make the slideshow work*/
   }
 }
 
-
-
-
-
 .overlay-wanted{
   position:absolute;
-  max-width: 100%;
+  max-width: 120%;
   top: 50%;
   left: 50%;
   margin-right: -50%;
@@ -527,7 +556,16 @@ these make the slideshow work*/
   background: url("../img/collect-full-run.jpg");
   background-size: cover;
   background-position: left;
-  grid-column: span 2;
+}
+.collect-comics-01{
+  background: url("../img/collect-full-run.jpg");
+  background-size: cover;
+  background-position: left;
+}
+.collect-comics-02{
+  background: url("../img/collect-01.jpg");
+  background-size: cover;
+  background-position: left;
 }
 .collect-milestone-run{
   background: url("../img/collect-milestone-run.jpg");
@@ -609,6 +647,73 @@ these make the slideshow work*/
   
 }
 /*****************************************************************************************************************************************************/
+/*                                                        Diamond Layout MCU Page                                                                   */
+/*****************************************************************************************************************************************************/
+#PhaseOne{
+  .container{
+    margin:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(397px, 1fr));
+    grid-gap:25px;
+  }
+  .container .box
+  {
+    position: relative;
+    width:100%;
+    height:700px;
+    background:#ff0;
+    margin:10px;
+    box-sizing: border-box;
+    display: inline-block;
+    overflow: hidden;
+    
+  }
+  .container .box .imgBox{
+    position:relative;
+    overflow:hidden;
+  }
+  .container .box .imgBox img{
+    max-width:100%;
+    transition:transform 2s;
+  }
+  .container .box:hover .imgBox img{
+    transform:scale(1.2);
+  }
+  .container .box .details{
+    position: absolute;
+    top:10px;
+    left:10px;
+    bottom:10px;
+    right:10px;
+    background:rgba(0,0,0,0.8);
+    transform:scaleY(0);
+    transition:transform .5s;
+  }
+  .container .box:hover .details{
+    transform:scaleY(1);
+  }
+  .container .box .details .content-mcu{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    text-align: center;
+    padding:15px;
+    color:#fff;
+  }
+  .container .box .details .content-mcu h2{
+    margin:0;
+    padding:0;
+    font-size:.8em;
+    color:#ff0;
+  }
+  .container .box .details .content-mcu p{
+    margin: 10px 0 0;
+    padding:0;
+  }
+}
+
+
+/*****************************************************************************************************************************************************/
 /*                                                        Comics Style Sheet                                                                         */
 /*****************************************************************************************************************************************************/
 .comic-title{
@@ -689,17 +794,6 @@ these make the slideshow work*/
   float:left;
   shape-outside: circle();/*The key for this to work*/
   margin: 30px 30px 5px 0;/*How to position the circle or photo*/
-}
-/*This box is to show content when user hover on the element*/
-div.content{
-  position:absolute;
-  bottom:-100%;
-  left:0;
-  width:100%;
-  background:rgba(0,0,0,.8);
-  box-sizing:border-box;
-  color:#fff;
-  opacity:0;
 }
 
 /*****************************************************************************************************************************************************/
@@ -987,66 +1081,4 @@ background-color: #107C10;
 }
 .header-vg {
   background-color: #C1C0C2;
-}
-/*MEDIA Query*/
-@media (max-width: 1450px){
-  body{
-    border: 20px solid $transparent;
-  }
-  header{
-    padding: 0 20px;
-  }
-  .toggle{
-    display:block;
-  }
-  nav ul
-  {
-    width:100%;
-    display:none;
-  }
-  nav ul li
-  {
-    display:block;
-    text-align: center;
-    width:50%;
-  }
-  nav ul li:hover
-  {
-    background:$secondary-color;
-  }
-  .active-sub-menu
-  {
-    display:block;
-  }
-  nav ul li ul li{
-    display:none;
-  }
-  nav ul li.active ul
-  {
-    position:relative;
-    display:block;
-  }
-  nav ul li.active ul li{
-    display:flex;
-  }
-  main{
-    margin: 5px 10px;
-  }
-  .bg-full{
-    display: none;
-  }
-  .collect-full-run{
-    grid-column: span 1;
-  }
-  .wrapper-vg{
-    display:grid;
-    grid-gap:10px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-    "sidebar-vg header-vg"
-    "sidebar-vg content-vg"
-    "sidebar-vg content-vg";
-    background-color: #107C10;
-      color: #444;
-    }
 }
