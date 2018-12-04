@@ -152,7 +152,7 @@ main{
 .bg-full{
   background-image: url('../img/bgfull2.png');
   background-size: cover;
-  background-position:center, 100% 30em;
+  background-position:center, 100% 30rem;
   box-shadow: var(--shadow);
   height:100vh;
   display:flex;
@@ -160,16 +160,16 @@ main{
   align-items: flex-end;
   text-align: center;
   letter-spacing: 2px;
-  padding:0px 20px;
+  padding:80px 40px;
   z-index: 2;
 }
 .bg-quote p{
   font-size: 3em;
   /*soft emboss text css*/
   text-transform: uppercase;
-  color: rgba(0,0,0,0.6);
-  text-shadow: 2px 8px 6px rgba(255,255,255,0.2),
-                 0px -5px 35px rgba(255,255,255,0.3);
+  color: rgba(252, 247, 247, 0.6);
+  text-shadow: 2px 8px 6px rgba(252, 252, 252, 0.2),
+                 0px -5px 35px rgba(252, 252, 252, 0.3);
 }
 
 /*Section Style*/
@@ -215,8 +215,7 @@ main{
   background:rgba(0,0,0,0);
 }
 #SectionHome .box:hover{
-  width:100vw;
-  
+  width:100vw;  
 }
 #TopGenre.container .box:nth-child(1){
   background: url(1.jpg);
@@ -237,11 +236,11 @@ main{
 /*End of Section Home Style*/
 .wrapper-grid{
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows:repeat(3, minmax(300px, 1fr));
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(4,minmax(500px,2fr));
+  grid-gap: 30px;
   background:$transparent;
-  border: 5px solid black;
+  border: 15px solid black;
   margin: 30px auto;
   object-fit:cover;
 }
@@ -571,7 +570,6 @@ these make the slideshow work*/
   background: url("../img/collect-milestone-run.jpg");
   background-size: cover;
   background-position: left;
-  grid-column: span 3;
 }
 /*Leisure Section*/
 .leisure-reading-01{
@@ -1082,3 +1080,65 @@ background-color: #107C10;
 .header-vg {
   background-color: #C1C0C2;
 }
+/*MEDIA Query*/
+@media (max-width: 1450px){
+  body{
+    border: 20px solid $transparent;
+  }
+  header{
+    padding: 0 20px;
+  }
+  .toggle{
+    display:block;
+  }
+  nav ul
+  {
+    width:100%;
+    display:none;
+  }
+  nav ul li
+  {
+    display:block;
+    text-align: center;
+    width:50%;
+  }
+  nav ul li:hover
+  {
+    background:$secondary-color;
+  }
+  .active-sub-menu
+  {
+    display:block;
+  }
+  nav ul li ul li{
+    display:none;
+  }
+  nav ul li.active ul
+  {
+    position:relative;
+    display:block;
+  }
+  nav ul li.active ul li{
+    display:flex;
+  }
+  main{
+    margin: 5px 10px;
+  }
+  .bg-full{
+    display: none;
+  }
+  .collect-full-run{
+    grid-column: span 1;
+  }
+  .wrapper-vg{
+    display:grid;
+    grid-gap:10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "sidebar-vg header-vg"
+    "sidebar-vg content-vg"
+    "sidebar-vg content-vg";
+    background-color: #107C10;
+      color: #444;
+    }
+  }
