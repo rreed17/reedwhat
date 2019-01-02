@@ -27,6 +27,7 @@ body {
 }
 a{
   color: yellow;
+  text-decoration: none;
 }
 /*HEADER NAVIGATION*/
 header
@@ -121,12 +122,12 @@ main{
 
   h2{
     font-size: 3em;
-    border-bottom: 4px solid #FFDD1A;
+    border-bottom: 4px solid $primary-color;
     text-transform: uppercase;
 
     a{
       text-decoration: none;
-      color: #FFDD1B;
+      color: #5B6677;
     }
 
     a:hover {
@@ -651,16 +652,15 @@ these make the slideshow work*/
   .container{
     margin:40px;
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(397px, 1fr));
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
     grid-gap:25px;
   }
   .container .box
   {
     position: relative;
     width:100%;
-    height:700px;
-    background:#ff0;
-    margin:10px;
+    background:$body-bg;
+    margin:5px;
     box-sizing: border-box;
     display: inline-block;
     overflow: hidden;
@@ -679,6 +679,7 @@ these make the slideshow work*/
   }
   .container .box .details{
     position: absolute;
+    font-size:.8em;
     top:10px;
     left:10px;
     bottom:10px;
@@ -706,7 +707,7 @@ these make the slideshow work*/
   }
   .container .box .details .content-mcu p{
     margin: 10px 0 0;
-    padding:0;
+    padding:5px;
   }
 }
 
@@ -930,17 +931,17 @@ these make the slideshow work*/
 /*Collects video games content boxes*/
 .section
 {
-  text-align:center;
+  text-align:left;
   padding: 50px 80px;
 }
 .section-light
 {
   background-color:$body-bg;
-  color:#666;
+  color:#7EB900;
 }
 .section-dark
 {
-  background-color:#282e34;
+  background-color:#7EB900;
   color:#ddd;
 }
 .ptext
@@ -990,7 +991,7 @@ these make the slideshow work*/
 
 .container-content{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
   grid-gap:10px;
 }
 .container-content .box-content
@@ -1056,30 +1057,27 @@ these make the slideshow work*/
 }
 
 .header-vg {
-  grid-area: header-vg;
- 
+  grid-area: header-vg; 
 }
 .wrapper-vg{
 display:grid;
-grid-gap:10px;
-grid-template-columns: 35rem 35rem 35rem;
+grid-gap:35px;
+grid-template-columns: 1fr 1fr 35rem;
 grid-template-areas:
 "sidebar-vg header-vg header-vg"
 "sidebar-vg content-vg content-vg"
 "sidebar-vg content-vg content-vg";
 background-color: #107C10;
-  color: #444;
+  color: #fff;
 }
 .box-vg {
-  background-color: $primary-color;
+  background-color: yellow;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
-  font-size: 150%;
+  font-size: 100%;
 }
-.header-vg {
-  background-color: #C1C0C2;
-}
+
 /*MEDIA Query*/
 @media (max-width: 1450px){
   body{

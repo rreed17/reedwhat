@@ -27,7 +27,8 @@ body {
   letter-spacing: 0.3rem; }
 
 a {
-  color: yellow; }
+  color: yellow;
+  text-decoration: none; }
 
 /*HEADER NAVIGATION*/
 header {
@@ -102,11 +103,11 @@ main {
   background-color: linear-gradient(30deg, #252C38, #262626); }
   main h2 {
     font-size: 3em;
-    border-bottom: 4px solid #FFDD1A;
+    border-bottom: 4px solid #5B6677;
     text-transform: uppercase; }
     main h2 a {
       text-decoration: none;
-      color: #FFDD1B; }
+      color: #5B6677; }
     main h2 a:hover {
       -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
       animation: neon2 1.5s ease-in-out infinite alternate; }
@@ -363,7 +364,7 @@ these make the slideshow work*/
   background-image: url("../img/wanted-machinerobo-mrdx-01.jpg"); }
 
 .controls {
-  background: #fff;
+  background: #5B6677;
   color: green;
   border: none;
   padding: 2px 0px;
@@ -619,15 +620,14 @@ these make the slideshow work*/
 #PhaseOne .container {
   margin: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(397px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 25px; }
 
 #PhaseOne .container .box {
   position: relative;
   width: 100%;
-  height: 700px;
-  background: #ff0;
-  margin: 10px;
+  background: linear-gradient(30deg, #252C38, #262626);
+  margin: 5px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
@@ -650,6 +650,7 @@ these make the slideshow work*/
 
 #PhaseOne .container .box .details {
   position: absolute;
+  font-size: .8em;
   top: 10px;
   left: 10px;
   bottom: 10px;
@@ -683,7 +684,7 @@ these make the slideshow work*/
 
 #PhaseOne .container .box .details .content-mcu p {
   margin: 10px 0 0;
-  padding: 0; }
+  padding: 5px; }
 
 /*****************************************************************************************************************************************************/
 /*                                                        Comics Style Sheet                                                                         */
@@ -882,15 +883,15 @@ these make the slideshow work*/
 /*collect_vide_games.html*/
 /*Collects video games content boxes*/
 .section {
-  text-align: center;
+  text-align: left;
   padding: 50px 80px; }
 
 .section-light {
   background-color: linear-gradient(30deg, #252C38, #262626);
-  color: #666; }
+  color: #7EB900; }
 
 .section-dark {
-  background-color: #282e34;
+  background-color: #7EB900;
   color: #ddd; }
 
 .ptext {
@@ -933,7 +934,7 @@ these make the slideshow work*/
 
 .container-content {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 10px; }
 
 .container-content .box-content {
@@ -1010,21 +1011,18 @@ these make the slideshow work*/
 
 .wrapper-vg {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: 35rem 35rem 35rem;
+  grid-gap: 35px;
+  grid-template-columns: 1fr 1fr 35rem;
   grid-template-areas: "sidebar-vg header-vg header-vg" "sidebar-vg content-vg content-vg" "sidebar-vg content-vg content-vg";
   background-color: #107C10;
-  color: #444; }
+  color: #fff; }
 
 .box-vg {
-  background-color: #fff;
+  background-color: yellow;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
-  font-size: 150%; }
-
-.header-vg {
-  background-color: #C1C0C2; }
+  font-size: 100%; }
 
 /*MEDIA Query*/
 @media (max-width: 1450px) {
